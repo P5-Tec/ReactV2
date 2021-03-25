@@ -1,0 +1,83 @@
+<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="100"
+				height="100"
+				viewBox="0 0 230 230"
+			>
+				<g fill="none">
+					<path d="M0,0H230V230H0Z" stroke="none" />
+					<path
+						d="M 7 7 L 7 223 L 223 223 L 223 7 L 7 7 M 0 0 L 230 0 L 230 230 L 0 230 L 0 0 Z"
+						stroke="none"
+						fill="#30d95d"
+					/>
+				</g>
+				<text
+					transform="translate(60 217)"
+					font-size="55"
+					font-family="SegoeUI, Segoe UI"
+					fill="white"
+				>
+					<tspan x="-50" y="-10">
+						YouBank
+					</tspan>
+				</text>
+				<g transform="translate(-1427.255 -1179.375)">
+					<path
+						d="M0,0H29.107"
+						transform="translate(1588.755 1318.768) rotate(-90)"
+						fill="none"
+						stroke="#ffff"
+						stroke-width="2"
+					/>
+					<path
+						d="M0,0H38.213"
+						transform="translate(1595.308 1323.322) rotate(-90)"
+						fill="none"
+						stroke="#ffff"
+						stroke-width="2"
+					/>
+					<path
+						d="M0,0H47.32"
+						transform="translate(1602.862 1327.875) rotate(-90)"
+						fill="none"
+						stroke="#ffff"
+						stroke-width="2"
+					/>
+					<path
+						d="M0,0H38.213"
+						transform="translate(1609.415 1323.322) rotate(-90)"
+						fill="none"
+						stroke="#ffff"
+						stroke-width="2"
+					/>
+					<path
+						d="M0,0H29.107"
+						transform="translate(1616.968 1318.768) rotate(-90)"
+						fill="none"
+						stroke="#ffff"
+						stroke-width="2"
+					/>
+					<path
+						d="M0,0H47.32"
+						transform="translate(1623.522 1327.875) rotate(-90)"
+						fill="none"
+						stroke="#ffff"
+						stroke-width="2"
+					/>
+					<path
+						d="M0,0H38.213"
+						transform="translate(1630.075 1323.322) rotate(-90)"
+						fill="none"
+						stroke="#ffff"
+						stroke-width="2"
+					/>
+					<path
+						d="M0,0H29.107"
+						transform="translate(1637.628 1318.768) rotate(-90)"
+						fill="none"
+						stroke="#ffff"
+						stroke-width="2"
+					/>
+				</g>
+			</svg>
