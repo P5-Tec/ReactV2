@@ -1,9 +1,28 @@
 footer {
-	background-color: #222;
+	background-color: rgb(48, 48, 48);
 	width: 100%;
 }
 
-footer h5 {
+footer p {
 	color: white;
 	margin: 0;
+	padding: 1rem;
+	font-weight: 600;
+}
+
+footer span {
+	margin: auto;
+	justify-content: space-between;
+	display: flex;
+	width: 60%;
+	padding: 1rem;
+}
+
+#spanLine {
+	border-top: white solid 2px;
+}
+
+.footerLink:hover {
+	color: #30d95d;
+	scale: 1.1;
 }
