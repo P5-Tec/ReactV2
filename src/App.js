@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { Route, Switch, useLocation } from "react-router-dom";
+import "./styles/App.css";
+
 import { IntlProvider } from "react-intl";
 import { flattenMessages } from "./utils";
-import "./styles/App.css";
+
+import { useCookies } from "react-cookie";
 
 import messages from "./messages";
 
@@ -15,13 +18,17 @@ import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Contact from "./components/Contact";
 
+//Get the locale language for user
 let locale = (navigator.languages && navigator.languages[0]) ||
 	navigator.language ||
 	navigator.userLanguage || ["en-US", "en"];
 
 function App() {
 	const location = useLocation();
-	const [language, setLanguage] = useState(locale);
+	//Cookie state
+	const [cokkies, setCookies] = useCookies(["language"]);
+	//Language state - get from cookie or locale (if no cookie)
+	const [language, setLanguage] = useState(cokkies.language || locale);
 
 	return (
 		<IntlProvider
@@ -29,7 +36,7 @@ function App() {
 			messages={flattenMessages(messages[language])}
 		>
 			<>
-				<Header language={language} setLanguage={setLanguage} />
+				<Header language={language} setCookies={setCookies} />
 				<Switch location={location} key={location.key}>
 					<Route path="/" component={Home} exact />
 
