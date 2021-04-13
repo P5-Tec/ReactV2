@@ -5,7 +5,7 @@ import Language from "./Language";
 import { ReactComponent as LogoImg } from "../images/yb_logo.svg";
 import { Link } from "react-router-dom";
 
-const Header = ({ language, setCookies }) => {
+const Header = ({ language, setLanguage, setCookies }) => {
 	return (
 		<header>
 			<Link to="/">
@@ -14,7 +14,11 @@ const Header = ({ language, setCookies }) => {
 
 			<div>
 				<DarkMode />
-				<Language language={language} setCookies={setCookies} />
+				<Language
+					language={language}
+					setLanguage={setLanguage}
+					setCookies={setCookies}
+				/>
 			</div>
 		</header>
 	);

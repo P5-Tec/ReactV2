@@ -27,7 +27,7 @@ const options = [
 	},
 ];
 
-const Language = ({ language, setCookies }) => {
+const Language = ({ language, setLanguage, setCookies }) => {
 	//State
 	const [isOpen, setIsOpen] = useState(false);
 	const [selectedOption, setSelectedOption] = useState(language);
@@ -39,6 +39,8 @@ const Language = ({ language, setCookies }) => {
 	const onOptionClicked = (value) => () => {
 		//Set selected option
 		setSelectedOption(value.value);
+		//Set language value
+		setLanguage(value.value);
 		//Set new cookie value for "language"
 		setCookies("language", value.value.toString(), { path: "/" });
 		setIsOpen(false);
