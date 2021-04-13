@@ -5,6 +5,7 @@ import flagUK from "../images/flag-uk.png";
 import flagDK from "../images/flag-dk.png";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
+//Dropdown items used in dropdown
 const options = [
 	{
 		value: "en-US",
@@ -26,15 +27,20 @@ const options = [
 	},
 ];
 
-const Language = ({ language, setLanguage }) => {
+const Language = ({ language, setCookies }) => {
+	//State
 	const [isOpen, setIsOpen] = useState(false);
 	const [selectedOption, setSelectedOption] = useState(language);
 
+	//Toggle between isOpen state
 	const toggling = () => setIsOpen(!isOpen);
 
+	//On selected item in dropdown update date
 	const onOptionClicked = (value) => () => {
+		//Set selected option
 		setSelectedOption(value.value);
-		setLanguage(value.value);
+		//Set new cookie value for "language"
+		setCookies("language", value.value.toString(), { path: "/" });
 		setIsOpen(false);
 	};
 
