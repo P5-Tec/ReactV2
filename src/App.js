@@ -36,7 +36,11 @@ function App() {
 			messages={flattenMessages(messages[language])}
 		>
 			<>
-				<Header language={language} setCookies={setCookies} />
+				<Header
+					language={language}
+					setLanguage={setLanguage}
+					setCookies={setCookies}
+				/>
 				<Switch location={location} key={location.key}>
 					<Route path="/" component={Home} exact />
 
