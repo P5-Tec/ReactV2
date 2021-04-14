@@ -18,6 +18,8 @@ import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Contact from "./components/Contact";
 import Support from "./components/Support";
+import Privacy from "./components/Privacy";
+import Terms from "./components/Terms";
 
 //Get the locale language for user
 let locale = (navigator.languages && navigator.languages[0]) ||
@@ -47,6 +49,8 @@ function App() {
 
 					<Route path="/contact" component={Contact} />
 					<Route path="/help" component={Support} />
+					<Route path="/privacy-policy" component={Privacy} />
+					<Route path="/terms-conditions" component={Terms} />
 				</Switch>
 				<Footer />
 			</>

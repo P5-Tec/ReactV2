@@ -1,5 +1,6 @@
 footer {
-	background-color: rgb(48, 48, 48);
+	/* background-color: rgb(48, 48, 48); */
+	background-color: rgb(56, 56, 56);
 	width: 100%;
 }
 
@@ -22,7 +23,11 @@ footer span {
 	border-top: white solid 2px;
 }
 
-.footerLink:hover {
+.footerLink a {
+	text-decoration: none;
+}
+
+.footerLink p:hover {
 	color: #30d95d;
 	scale: 1.1;
 }

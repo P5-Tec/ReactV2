@@ -51,7 +51,7 @@ const Language = ({ language, setLanguage, setCookies }) => {
 			<div className="DropDownContainer">
 				<div className="DropDownHeader" onClick={toggling}>
 					{selectedOption === "en-US" ? (
-						<div className="">
+						<div>
 							<img src={flagUK} height="40px" width="40px" alt="UK Flag" />
 							<FontAwesomeIcon
 								icon={faChevronDown}
@@ -73,7 +73,7 @@ const Language = ({ language, setLanguage, setCookies }) => {
 					)}
 				</div>
 				{isOpen && (
-					<div>
+					<div className="DropDownBox">
 						<ul className="DropDownList">
 							{options.map((option) => (
 								<li
