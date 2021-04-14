@@ -1,6 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FormattedMessage, injectIntl } from "react-intl";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+	faCommentDots,
+	faEnvelope,
+	faPhone,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Contact = () => {
 	return (
@@ -24,7 +30,16 @@ const Contact = () => {
 
 			<div>
 				<div>
-					<img alt="Chat icon" />
+					<FontAwesomeIcon
+						icon={faCommentDots}
+						size="5x"
+						color={"green"}
+						style={{
+							borderRadius: "30px",
+							border: "green solid 5px",
+							padding: "10px",
+						}}
+					/>
 					<h2>
 						<FormattedMessage id="contactPage.secondSection.firstBox.heading" />
 					</h2>
@@ -40,7 +55,16 @@ const Contact = () => {
 				</div>
 
 				<div>
-					<img alt="Call icon" />
+					<FontAwesomeIcon
+						icon={faPhone}
+						size="5x"
+						color={"green"}
+						style={{
+							borderRadius: "30px",
+							border: "green solid 5px",
+							padding: "10px",
+						}}
+					/>
 					<h2>
 						<FormattedMessage id="contactPage.secondSection.secondBox.heading" />
 					</h2>
@@ -56,7 +80,16 @@ const Contact = () => {
 				</div>
 
 				<div>
-					<img alt="Email icon" />
+					<FontAwesomeIcon
+						icon={faEnvelope}
+						size="5x"
+						color={"green"}
+						style={{
+							borderRadius: "30px",
+							border: "green solid 5px",
+							padding: "10px",
+						}}
+					/>
 					<h2>
 						<FormattedMessage id="contactPage.secondSection.thirdBox.heading" />
 					</h2>

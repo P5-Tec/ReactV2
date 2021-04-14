@@ -7,6 +7,7 @@
 .DropDownContainer {
 	width: 10.5em;
 	margin: 0 auto;
+	z-index: 5;
 }
 
 .DropDownHeader {
@@ -33,6 +34,12 @@
 	font-weight: 500;
 }
 
+.DropDownBox {
+	width: 10.5em;
+	position: absolute;
+	z-index: 2;
+}
+
 .ListItem {
 	list-style: none;
 	margin-bottom: 0.8em;
@@ -48,9 +55,9 @@
 }
 
 .flagItem p {
-	position: fixed;
+	position: absolute;
 	display: inline-block;
 	margin: 0;
 	padding-left: 15px;
-	padding-top: 5px;
+	padding-top: 3px;
 }

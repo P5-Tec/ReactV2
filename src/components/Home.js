@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import MoneyImg from "../images/money.png";
 import MobileBankImg from "../images/mobileBank.png";
 import CreditCardImg from "../images/CreditCards.png";
-import { faCheck, faCheckCircle } from "@fortawesome/free-solid-svg-icons";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
 const Home = () => {
 	return (
