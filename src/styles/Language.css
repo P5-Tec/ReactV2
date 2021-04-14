@@ -15,6 +15,7 @@
 	font-size: 1.3rem;
 	color: #3faffa;
 	background: inherit;
+	cursor: pointer;
 }
 
 .DropDownList {
@@ -36,6 +37,10 @@
 	list-style: none;
 	margin-bottom: 0.8em;
 	vertical-align: middle;
+}
+
+.flagItem {
+	cursor: pointer;
 }
 
 .flagItem img {
