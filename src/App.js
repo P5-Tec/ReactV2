@@ -17,6 +17,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Contact from "./components/Contact";
+import Support from "./components/Support";
 
 //Get the locale language for user
 let locale = (navigator.languages && navigator.languages[0]) ||
@@ -45,6 +46,7 @@ function App() {
 					<Route path="/" component={Home} exact />
 
 					<Route path="/contact" component={Contact} />
+					<Route path="/help" component={Support} />
 				</Switch>
 				<Footer />
 			</>
