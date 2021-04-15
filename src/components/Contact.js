@@ -7,11 +7,13 @@ import {
 	faEnvelope,
 	faPhone,
 } from "@fortawesome/free-solid-svg-icons";
+import SupportImg from "../images/support.png";
 
 const Contact = () => {
 	return (
 		<div>
 			<div>
+				<img src={SupportImg} alt="Support" />
 				<h3>
 					<FormattedMessage id="contactPage.firstSection.heading" />
 				</h3>

@@ -12,13 +12,25 @@ const Header = ({ language, setLanguage, setCookies }) => {
 				<LogoImg id="logo" />
 			</Link>
 
-			<div>
-				<DarkMode />
-				<Language
-					language={language}
-					setLanguage={setLanguage}
-					setCookies={setCookies}
-				/>
+			<div className="headerContols">
+				<div id="headerLinks">
+					<Link>
+						<p>Login</p>
+					</Link>
+
+					<Link>
+						<p>Register</p>
+					</Link>
+				</div>
+
+				<div>
+					<DarkMode />
+					<Language
+						language={language}
+						setLanguage={setLanguage}
+						setCookies={setCookies}
+					/>
+				</div>
 			</div>
 		</header>
 	);
