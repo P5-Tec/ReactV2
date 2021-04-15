@@ -7,7 +7,7 @@
 .DropDownContainer {
 	width: 10.5em;
 	margin: 0 auto;
-	z-index: 5;
+	z-index: 1;
 }
 
 .DropDownHeader {

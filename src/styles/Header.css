@@ -2,7 +2,10 @@ header {
 	display: flex;
 	justify-content: space-between;
 	background-color: rgb(56, 56, 56);
-	width: 100%;
+	position: fixed; /* Set the navbar to fixed position */
+	top: 0; /* Position the navbar at the top of the page */
+	width: 100%; /* Full width */
+	z-index: 1;
 }
 
 header h1 {
@@ -13,4 +16,29 @@ header h1 {
 
 #logo {
 	margin: 1rem;
+}
+
+.headerContols {
+	display: flex;
+}
+
+#headerLinks {
+	margin-right: 10rem;
+	padding: 20px;
+}
+
+#headerLinks p {
+	color: white;
+	margin: 0;
+	padding: 1rem;
+	font-weight: 600;
+}
+
+#headerLinks a {
+	text-decoration: none;
+}
+
+#headerLinks p:hover {
+	color: #30d95d;
+	scale: 1.1;
 }
