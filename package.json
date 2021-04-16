@@ -5,6 +5,7 @@
   "dependencies": {
     "@formatjs/intl-relativetimeformat": "^8.1.5",
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-brands-svg-icons": "^5.15.3",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/react-fontawesome": "^0.1.14",
     "@testing-library/jest-dom": "^5.11.9",
@@ -17,6 +18,8 @@
     "react-cookie": "^4.0.3",
     "react-dom": "^17.0.2",
     "react-intl": "^5.15.8",
+    "react-media-hook": "^0.4.9",
+    "react-modal": "^3.13.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-select": "^4.3.0",

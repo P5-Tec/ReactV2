@@ -1,10 +1,10 @@
 header {
 	display: flex;
 	justify-content: space-between;
-	background-color: rgb(56, 56, 56);
-	position: fixed; /* Set the navbar to fixed position */
-	top: 0; /* Position the navbar at the top of the page */
-	width: 100%; /* Full width */
+	background-color: rgb(44, 44, 44);
+	position: fixed;
+	top: 0;
+	width: 100%;
 	z-index: 1;
 }
 
@@ -41,4 +41,59 @@ header h1 {
 #headerLinks p:hover {
 	color: #30d95d;
 	scale: 1.1;
+}
+
+.headerToggles {
+	margin-right: 50px;
+}
+
+#menuIcon :active {
+	color: #30d95d;
+	scale: 1.1;
+}
+
+.modalMain {
+	margin-top: 7rem;
+}
+
+.modalLinks p {
+	font-size: 2rem;
+	font-weight: 700;
+	color: white;
+}
+
+.modalLinks a {
+	text-decoration: none;
+}
+
+.modalLinks p:active {
+	color: #30d95d;
+}
+
+.modalToggles {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.modalToggles span {
+	scale: 1.1;
+	margin: auto;
+}
+
+.modalSocialLinks {
+	margin-top: 50%;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.modalLastDiv {
+	margin-top: 10%;
+	padding-top: 5%;
+	border-top: white 2px solid;
+}
+
+.modalLastDiv p {
+	color: #30d95d;
+	text-align: center;
 }
