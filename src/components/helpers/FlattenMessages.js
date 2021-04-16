@@ -1,3 +1,5 @@
+//Function used to help find the text for intl.
+//Helps by allowing to use the prefixes (nested prefixes & keys)
 export function flattenMessages(nestedMessages, prefix = "") {
 	return Object.keys(nestedMessages).reduce((messages, key) => {
 		let value = nestedMessages[key];
