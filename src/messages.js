@@ -359,6 +359,82 @@ export default {
 				p2: "By email: support@youbank.dk",
 			},
 		},
+		SupportPage: {
+			h1: "What do you need help with? ",
+			section1: {
+				h1: "Frequently asked questions",
+				q1: "What is YouBank? ",
+				a1:
+					"YouBank er en digital bank uden fysiske filialer. Du får alt det, du forbinder med en bank: Konto, Visa-kort, betalinger, lånemuligheder, Mobile Pay, Apple Pay, Google Pay m.v. Derudover får du Danmarks bedste bank-app, så du nemt og sikkert kan styre din økonomi fra mobilen. Vi kan være din primære bank, men du kan også bruge os som din sekundære bank, hvis du ikke ønsker at skifte. I appen finder du alle nødvendige features til at få mest muligt ud af dine penge. Du får fx en helt ny måde at se dit forbrug på, interaktivt budget og notifikationer, hver gang du bruger penge - og du kan betale og overføre uden gebyrer.",
+				q2: "Do I have to change bank to get YouBank? ",
+				a2:
+					"No, you do not need to change bank to get Denmark's best banking app. You can easily keep your current bank and use us next door. You can, for example, create an account with us and link your account in your other bank to our app, so you get a full overview of your finances in the app. ",
+				q3: "How do I get YouBank? ",
+				a3:
+					"Download the YouBank app in the App Store or Google Play and sign up directly in the app or here on the website. It takes a few minutes. ",
+				q4: "How can it be free to get YouBank? ",
+				a4:
+					"It is completely free to sign up for YouBank and get an account, a Visa / Mastercard and Denmark's best banking app. You also do not pay anything to transfer and receive money or to pay bills. If you want even more, you can upgrade to Premium and Pro in the app, and you can buy shares in our investment universe. ",
+				q5: "What is the difference between YouBank and other banks? ",
+				a5:
+					"Unlike other banks, we are 100% digital and have cut off all physical branches. We have done this because we do not believe the branches are necessary as long as everything is available on the mobile. That is why we have used our energy to create Denmark's best banking app, so you can manage your finances from your mobile. It's faster and much more manageable - and you save a huge amount of time. You get everything you associate with a bank in a whole new way. ",
+			},
+			section2: {
+				h1: "Profile",
+				q1: "How can I change my information? ",
+				a1:
+					"Under the Profile icon → Edit profile, you have the option to change the information you have entered yourself.",
+				q2: "I have received a new email, what should I do? ",
+				a2:
+					"If you have changed mail since your creation, you can always change your mail under the Profile Icon → Edit Profile. ",
+			},
+			section3: {
+				h1: "Card",
+				q1: "My card was not accepted, why not? ",
+				a1:
+					"This can be due to different things. It can e.g. be that there has not been enough money in the account or that there are problems with the payment terminal.",
+				q2: "Are there fees when paying with your card? ",
+				a2:
+					"Unfortunately, we cannot avoid all fees, as it is usually those who receive the card who demand them. So places where there may be fees are, e.g. for online shopping and use of the card abroad, where it is the store that charges a fee. ",
+				q3: "I forgot my PIN, what do I do? ",
+				a3:
+					'If you have forgotten your code, you can always find it in the app by pressing "Show PIN" under the card icon.',
+				q4: "How do I activate my card? ",
+				a4:
+					"When you order a new card, it is active from the order date. You can only use your card by using 3D Secure online or entering the PIN the first time the card is used. ",
+				q5: "Can my card be used for contactless payments? ",
+				a5:
+					"Yes, it can. Our card is equipped with NFC chip, which ensures contactless payment, provided that the store is also equipped with this system. ",
+				q6: "Can I pay with my card abroad? ",
+				a6:
+					"The card can be used in all the stores around the world that accept your specific card type.",
+			},
+			section4: {
+				h1: "App",
+				q1: "Where can I download the app? ",
+				a1: "You can download Lunar in the App Store and Google Play. ",
+				q2: "For which operating systems is the app available? ",
+				a2:
+					"The app is available for iOS and Android. The iOS version can be found in the App Store. The Android version can be found in Google Play. ",
+				q3: "What do I do if I lose my phone? ",
+				a3:
+					"Your phone needs to be disconnected from your account, we can help you with this if you contact support. You can choose to write an email to us at support@youbank.dk otherwise give us a call on tel: +45 22 22 45 54. We can be met every weekday from kl. 9-23 and 10-17 on weekends. ",
+			},
+			section5: {
+				h1: "Account",
+				q1: "Where can I see my balance? ",
+				a1: "You can see your balance on the front page of the app. ",
+				q2: "Can I become a user if I am under 18? ",
+				a2:
+					"Unfortunately no. You must be 18 years of age to be registered as a YouBank user.",
+				q3: "Who can become a customer? ",
+				a3:
+					"As an owner, you must live and pay tax in Denmark. To create an account, you must be 18 years of age or older. ",
+				q4: "What accounts do I get? ",
+				a4:
+					"When you as the user create an account with YouBank, you will automatically get a Basic account. If you want even more, you can upgrade to Premium and Pro in the app.",
+			},
+		},
 		footerText: {
 			txt1: "Terms & Conditions",
 			txt2: "Privacy policy",
@@ -724,6 +800,82 @@ export default {
 				p1:
 					"Hvis du har spørgsmål om disse vilkår og betingelser, kan du kontakte os:",
 				p2: "Via e-mail: support@youbank.dk ",
+			},
+		},
+		SupportPage: {
+			h1: "Hvad har du brug for hjælp til?",
+			section1: {
+				h1: "Mest stillede spørgsmål",
+				q1: "Hvad er YouBank?",
+				a1:
+					"YouBank er en digital bank uden fysiske filialer. Du får alt det, du forbinder med en bank: Konto, Visa-kort, betalinger, lånemuligheder, Mobile Pay, Apple Pay, Google Pay m.v. Derudover får du Danmarks bedste bank-app, så du nemt og sikkert kan styre din økonomi fra mobilen. Vi kan være din primære bank, men du kan også bruge os som din sekundære bank, hvis du ikke ønsker at skifte. I appen finder du alle nødvendige features til at få mest muligt ud af dine penge. Du får fx en helt ny måde at se dit forbrug på, interaktivt budget og notifikationer, hver gang du bruger penge - og du kan betale og overføre uden gebyrer.",
+				q2: "Skal jeg skifte bank for at få YouBank?",
+				a2:
+					"Nej, du behøver ikke skifte bank for at få Danmarks bedste bank-app. Du kan sagtens beholde din nuværende bank og bruge os ved siden af. Du kan fx oprette en konto hos os og koble din konto i din anden bank til vores app, så du får det fulde overblik over din økonomi i appen.",
+				q3: "Hvordan får jeg YouBank?",
+				a3:
+					"Hent YouBank-appen i App Store eller Google Play og tilmeld dig direkte i appen eller her på hjemmesiden. Det tager få minutter.",
+				q4: "Hvordan kan det være gratis at få YouBank?",
+				a4:
+					"Det er helt gratis at tilmelde sig YouBank og få en konto, et Visa/Mastercard og Danmarks bedste bank-app. Du betaler heller ikke noget for at overføre og modtage penge eller for at betale regninger. Vil du have mere endnu, kan du opgradere til Premium og Pro i appen, og du kan købe aktier i vores investeringsunivers.",
+				q5: "Hvad er forskellen på YouBank og andre banker?",
+				a5:
+					"I modsætning til andre banker, er vi 100% digitale og har skåret alle fysiske filialer fra. Det har vi gjort, fordi vi ikke mener, filialerne er nødvendige, så længe alt er tilgængeligt på mobilen. Derfor har vi brugt vores energi på at skabe Danmarks bedste bank-app, så du kan styre din økonomi fra din mobil. Det er hurtigere og langt mere overskueligt - og du sparer enormt meget tid. Du får alt det, du forbinder med en bank, på en helt ny måde.",
+			},
+			section2: {
+				h1: "Profil",
+				q1: "Hvordan kan jeg ændre mine oplysninger?",
+				a1:
+					"Under Profilikonet → Rediger profil har du mulighed for at ændre de oplysninger, du selv har indtastet.",
+				q2: "Jeg har fået ny mail, hvad skal jeg gøre?",
+				a2:
+					"Hvis du har ændret mail siden din oprettelse, kan du altid ændre din mail under Profilikonet → Rediger profil.",
+			},
+			section3: {
+				h1: "Kort",
+				q1: "Mit kort blev ikke accepteret, hvorfor ikke?",
+				a1:
+					"Dette kan skyldes forskellige ting. Det kan fx. være at der ikke har været nok penge på kontoen eller at der er problemer med betalingsterminalen. ",
+				q2: "Er der gebyrer, når man betaler med sit kort?",
+				a2:
+					"Vi kan desværre ikke slippe uden om alle gebyrer, da det oftest er dem, der tager imod kortet, der kræver dem. Så steder, hvor der kan komme gebyrer, er, f.eks. ved nethandel og brug af kortet i udlandet, hvor det er butikken, der pålægger et gebyr.",
+				q3: "Jeg har glemt min PIN-kode, hvad gør jeg?",
+				a3:
+					"Hvis du har glemt din kode, kan du altid finde den i app'en ved at trykke “Vis PIN” under kort ikonet.",
+				q4: "Hvordan aktiverer jeg mit kort?",
+				a4:
+					"Når du bestiller et nyt kort, er det aktivt fra bestillingsdatoen. Du kan kun bruge dit kort ved at benytte 3D Secure online eller indtaste PIN første gang kortet tages i brug.",
+				q5: "Kan mit kort bruges til kontaktløse betalinger?",
+				a5:
+					"Ja, det kan det. Vores kort er udstyret med NFC-chip, som sikrer kontaktløs betaling, såfremt at butikken også er udstyret med dette system.",
+				q6: "Kan jeg betale med mit kort i udlandet?",
+				a6:
+					"Kortet kan bruges i alle de butikker verden over, som tager imod det bestemte kort type.",
+			},
+			section4: {
+				h1: "App",
+				q1: "Hvor kan jeg downloade appen?",
+				a1: "Du kan hente Lunar i App Store og Google Play.",
+				q2: "Til hvilke styresystemer er app'en tilgængelig?",
+				a2:
+					"App'en er tilgængelig til iOS og Android. iOS versionen finder du i App Store. Android versionen finder du i Google Play.",
+				q3: "Hvad gør jeg, hvis jeg mister min telefon?",
+				a3:
+					"Din telefon skal afkobles fra din konto, dette kan vi hjælpe dig med, hvis du kontakter supporten. Du kan vælge at skrive en mail til os på support@youbank.dk ellers så giv os et kald på tlf: +45 22 22 45 54. Vi kan træffes alle hverdage fra kl. 9-23 og 10-17 i weekenderne.",
+			},
+			section5: {
+				h1: "Konto",
+				q1: "Hvor kan jeg se min saldo?",
+				a1: "Du kan se din saldo på forsiden i app'en.",
+				q2: "Kan jeg blive bruger, hvis jeg er under 18?",
+				a2:
+					"Nej, desværre. Du skal være fyldt 18 år for at blive oprettet som bruger hos YouBank. ",
+				q3: "Hvem kan blive kunde?",
+				a3:
+					"Du skal som ejer bo og betale skat i Danmark. For at oprette en konto skal du være fyldt 18 år.",
+				q4: "Hvilken konti man han få?",
+				a4:
+					"Når du som brugeren opretter konto hos YouBank bliver du automatisk oprettet en Basis konti. Vil du have mere endnu, kan du opgradere til Premium og Pro i appen.",
 			},
 		},
 		footerText: {
