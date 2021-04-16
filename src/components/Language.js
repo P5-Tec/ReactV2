@@ -57,7 +57,7 @@ const Language = ({ language, setLanguage, setCookies }) => {
 								icon={faChevronDown}
 								size="lg"
 								color={"white"}
-								style={{ marginLeft: "30px", paddingBottom: "10px" }}
+								style={{ marginLeft: "30px", paddingTop: "10px" }}
 							/>
 						</div>
 					) : (
@@ -67,7 +67,7 @@ const Language = ({ language, setLanguage, setCookies }) => {
 								icon={faChevronDown}
 								size="lg"
 								color={"white"}
-								style={{ marginLeft: "30px", paddingBottom: "10px" }}
+								style={{ marginLeft: "30px", paddingTop: "10px" }}
 							/>
 						</div>
 					)}
