@@ -3,7 +3,7 @@ import { Route, Switch, useLocation } from "react-router-dom";
 import "./styles/App.css";
 
 import { IntlProvider } from "react-intl";
-import { flattenMessages } from "./utils";
+import { flattenMessages } from "./components/helpers/FlattenMessages";
 
 import { useCookies } from "react-cookie";
 
