@@ -1,14 +1,15 @@
 import React from "react";
 import { FormattedMessage, injectIntl } from "react-intl";
+import "../styles/TermsAndPricavy.css";
 
 const Privacy = () => {
 	return (
-		<div>
-			<div className="sectionDiv">
-				<h1>
+		<div className="sectionMain">
+			<div className="section">
+				<h1 className="mainHeading">
 					<FormattedMessage id="PrivacyPage.mainHeading" />
 				</h1>
-				<p>
+				<p className="updatedP">
 					<FormattedMessage id="PrivacyPage.date" />
 				</p>
 				<p>
@@ -19,7 +20,7 @@ const Privacy = () => {
 				</p>
 			</div>
 
-			<div className="sectionDiv">
+			<div className="section">
 				<h1>
 					<FormattedMessage id="PrivacyPage.firstSection.h1" />
 				</h1>
@@ -151,7 +152,7 @@ const Privacy = () => {
 				</ul>
 			</div>
 
-			<div className="sectionDiv">
+			<div className="section">
 				<h1>
 					<FormattedMessage id="PrivacyPage.secondSection.h1" />
 				</h1>
@@ -427,7 +428,7 @@ const Privacy = () => {
 				</p>
 			</div>
 
-			<div className="sectionDiv">
+			<div className="section">
 				<h1>
 					<FormattedMessage id="PrivacyPage.thirdSection.h1" />
 				</h1>
@@ -439,7 +440,7 @@ const Privacy = () => {
 				</p>
 			</div>
 
-			<div className="sectionDiv">
+			<div className="section">
 				<h1>
 					<FormattedMessage id="PrivacyPage.fourthSection.h1" />
 				</h1>
@@ -454,7 +455,7 @@ const Privacy = () => {
 				</p>
 			</div>
 
-			<div className="sectionDiv">
+			<div className="section">
 				<h1>
 					<FormattedMessage id="PrivacyPage.fifthSection.h1" />
 				</h1>

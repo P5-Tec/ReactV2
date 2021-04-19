@@ -1,14 +1,15 @@
 import React from "react";
 import { FormattedMessage, injectIntl } from "react-intl";
+import "../styles/TermsAndPricavy.css";
 
 const Terms = () => {
 	return (
-		<div>
+		<div className="sectionMain">
 			<div className="section">
-				<h1>
+				<h1 className="mainHeading">
 					<FormattedMessage id="TermsPage.mainHeading" />
 				</h1>
-				<p>
+				<p className="updatedP">
 					<FormattedMessage id="TermsPage.p1" />
 				</p>
 				<p>
