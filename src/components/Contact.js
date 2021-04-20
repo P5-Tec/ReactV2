@@ -8,33 +8,40 @@ import {
 	faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 import SupportImg from "../images/support.png";
+import "../styles/Contact.css";
 
 const Contact = () => {
 	return (
-		<div>
-			<div>
-				<img src={SupportImg} alt="Support" />
-				<h3>
-					<FormattedMessage id="contactPage.firstSection.heading" />
-				</h3>
-				<p>
-					<FormattedMessage id="contactPage.firstSection.p1" />
-				</p>
-				<p>
-					<FormattedMessage id="contactPage.firstSection.p2" />
-				</p>
-				<Link to="/help">
-					<button>
-						<FormattedMessage id="contactPage.firstSection.btn" />
-					</button>
-				</Link>
+		<div className="container-fluid mainDiv">
+			<div className="row contactSection">
+				<img
+					src={SupportImg}
+					alt="Support"
+					className="col-lg-6 order-lg-2 sectionImg"
+				/>
+				<span className="col-lg-6 order-lg-1">
+					<h3>
+						<FormattedMessage id="contactPage.firstSection.heading" />
+					</h3>
+					<p>
+						<FormattedMessage id="contactPage.firstSection.p1" />
+					</p>
+					<p>
+						<FormattedMessage id="contactPage.firstSection.p2" />
+					</p>
+					<Link to="/help">
+						<button>
+							<FormattedMessage id="contactPage.firstSection.btn" />
+						</button>
+					</Link>
+				</span>
 			</div>
 
-			<div>
-				<div>
+			<div className="row">
+				<div className="col-lg-4 contactBox">
 					<FontAwesomeIcon
 						icon={faCommentDots}
-						size="5x"
+						size="7x"
 						color={"green"}
 						style={{
 							borderRadius: "30px",
@@ -56,10 +63,10 @@ const Contact = () => {
 					</p>
 				</div>
 
-				<div>
+				<div className="col-lg-4 contactBox">
 					<FontAwesomeIcon
 						icon={faPhone}
-						size="5x"
+						size="7x"
 						color={"green"}
 						style={{
 							borderRadius: "30px",
@@ -81,10 +88,10 @@ const Contact = () => {
 					</p>
 				</div>
 
-				<div>
+				<div className="col-lg-4 contactBox">
 					<FontAwesomeIcon
 						icon={faEnvelope}
-						size="5x"
+						size="7x"
 						color={"green"}
 						style={{
 							borderRadius: "30px",

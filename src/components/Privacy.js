@@ -34,7 +34,7 @@ const Privacy = () => {
 					<FormattedMessage id="PrivacyPage.firstSection.h2_2" />
 				</h2>
 				<p>
-					<FormattedMessage id="PrivacyPage.firstSection.p2" />:
+					<FormattedMessage id="PrivacyPage.firstSection.p2" />
 				</p>
 				<ul>
 					<li>
