@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FormattedMessage, injectIntl } from "react-intl";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 import "../styles/Home.css";
 
@@ -10,9 +12,49 @@ import MobileBankImg from "../images/mobileBank.png";
 import CreditCardImg from "../images/CreditCards.png";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
+const svgVariants = {
+	hidden: { rotate: -360 },
+	visible: {
+		rotate: 0,
+		transition: {
+			duration: 1,
+		},
+	},
+};
+
+const buttonVarians = {
+	hover: {
+		scale: 1.1,
+		textShadow: "0px 0px 8px rgb(255, 255, 255)",
+		boxShadow: "0px 0px 8px #30d95d",
+		transition: {
+			duration: 0.3,
+			yoyo: Infinity,
+		},
+	},
+};
+
 const Home = () => {
+	const controls = useAnimation();
+	const { ref, inView } = useInView();
+
+	useEffect(() => {
+		if (inView) {
+			controls.start("visible");
+		}
+		if (!inView) {
+			controls.start("hidden");
+		}
+	}, [controls, inView]);
+
 	return (
-		<div className="container-fluid mainDiv">
+		<motion.div
+			className="container-fluid mainDiv"
+			initial={{ scaleY: 0 }}
+			animate={{ scaleY: 1 }}
+			exit={{ scaleY: 0 }}
+			transition={{ duration: 0.5 }}
+		>
 			<div className="row sectionDiv">
 				<img
 					className="col-lg-6 order-lg-2 sectionImg"
@@ -32,59 +74,80 @@ const Home = () => {
 					<p>
 						<FormattedMessage id="homePage.firstSection.p3" />
 					</p>
-					<button>
+					<motion.button variants={buttonVarians} whileHover="hover">
 						<FormattedMessage id="homePage.firstSection.btn" />
-					</button>
+					</motion.button>
 				</span>
 			</div>
 
 			<div className="row sectionDiv infoDiv">
 				<span className="col-lg-4 infoBox">
-					<FontAwesomeIcon
-						className="infoBoxIcon"
-						icon={faCheck}
-						color={"green"}
-						size="4x"
-						style={{
-							borderRadius: "50px",
-							border: "green solid 5px",
-							padding: "5px",
-						}}
-					/>
+					<motion.section
+						ref={ref}
+						variants={svgVariants}
+						initial="hidden"
+						animate={controls}
+					>
+						<FontAwesomeIcon
+							className="infoBoxIcon"
+							icon={faCheck}
+							color={"green"}
+							size="4x"
+							style={{
+								borderRadius: "50px",
+								border: "green solid 5px",
+								padding: "5px",
+							}}
+						/>
+					</motion.section>
 					<p>
 						<FormattedMessage id="homePage.secondSection.first" />
 					</p>
 				</span>
 
 				<span className="col-lg-4 infoBox">
-					<FontAwesomeIcon
-						className="infoBoxIcon"
-						icon={faCheck}
-						color={"green"}
-						size="4x"
-						style={{
-							borderRadius: "50px",
-							border: "green solid 5px",
-							padding: "5px",
-						}}
-					/>
+					<motion.section
+						ref={ref}
+						variants={svgVariants}
+						initial="hidden"
+						animate={controls}
+					>
+						<FontAwesomeIcon
+							className="infoBoxIcon"
+							icon={faCheck}
+							color={"green"}
+							size="4x"
+							style={{
+								borderRadius: "50px",
+								border: "green solid 5px",
+								padding: "5px",
+							}}
+						/>
+					</motion.section>
 					<p>
 						<FormattedMessage id="homePage.secondSection.second" />
 					</p>
 				</span>
 
 				<span className="col-lg-4 infoBox">
-					<FontAwesomeIcon
-						className="infoBoxIcon"
-						icon={faCheck}
-						color={"green"}
-						size="4x"
-						style={{
-							borderRadius: "50px",
-							border: "green solid 5px",
-							padding: "5px",
-						}}
-					/>
+					<motion.section
+						ref={ref}
+						variants={svgVariants}
+						initial="hidden"
+						animate={controls}
+					>
+						<FontAwesomeIcon
+							className="infoBoxIcon"
+							icon={faCheck}
+							color={"green"}
+							size="4x"
+							style={{
+								borderRadius: "50px",
+								border: "green solid 5px",
+								padding: "5px",
+							}}
+						/>
+					</motion.section>
 					<p>
 						<FormattedMessage id="homePage.secondSection.third" />
 					</p>
@@ -145,9 +208,9 @@ const Home = () => {
 							<FormattedMessage id="homePage.fifthSection.leftBox.p" />
 						</p>
 						<Link to="/contact">
-							<button>
+							<motion.button variants={buttonVarians} whileHover="hover">
 								<FormattedMessage id="homePage.fifthSection.leftBox.btn" />
-							</button>
+							</motion.button>
 						</Link>
 					</div>
 				</span>
@@ -161,14 +224,14 @@ const Home = () => {
 							<FormattedMessage id="homePage.fifthSection.rightBox.p" />
 						</p>
 						<Link to="/help">
-							<button>
+							<motion.button variants={buttonVarians} whileHover="hover">
 								<FormattedMessage id="homePage.fifthSection.rightBox.btn" />
-							</button>
+							</motion.button>
 						</Link>
 					</div>
 				</span>
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 

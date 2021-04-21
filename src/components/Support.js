@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FormattedMessage, injectIntl } from "react-intl";
+import { motion } from "framer-motion";
+
 import FaqImage from "../images/faq.png";
 import "../styles/Support.css";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faArrowCircleDown,
 	faCreditCard,
@@ -42,7 +45,13 @@ const Support = () => {
 	};
 
 	return (
-		<div className="container-fluid mainDiv">
+		<motion.div
+			className="container-fluid mainDiv"
+			initial={{ scaleY: 0 }}
+			animate={{ scaleY: 1 }}
+			exit={{ scaleY: 0 }}
+			transition={{ duration: 0.5 }}
+		>
 			<div className="row supportMainSection">
 				<img
 					src={FaqImage}
@@ -180,7 +189,7 @@ const Support = () => {
 						</div>
 					))}
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 
