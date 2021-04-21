@@ -20,9 +20,9 @@ const Contact = () => {
 					className="col-lg-6 order-lg-2 sectionImg"
 				/>
 				<span className="col-lg-6 order-lg-1">
-					<h3>
+					<h2>
 						<FormattedMessage id="contactPage.firstSection.heading" />
-					</h3>
+					</h2>
 					<p>
 						<FormattedMessage id="contactPage.firstSection.p1" />
 					</p>
