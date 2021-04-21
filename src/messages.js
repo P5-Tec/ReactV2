@@ -755,7 +755,7 @@ export default {
 					"Efter opsigelse ophører din ret til at bruge tjenesten med det samme. ",
 			},
 			section5: {
-				h1: '"SOM DEN ER " og "SOM TILGÆNGELIG" Ansvarsfraskrivelse ',
+				h1: '"SOM DEN ER " og "SOM TILGÆNGELIG" Ansvarsfraskrive ',
 				p1:
 					'Tjenesten leveres til dig "SOM DEN ER" og "SOM TILGÆNGELIG" og med alle fejl og mangler uden nogen form for garanti. I det maksimale omfang, der er tilladt i henhold til gældende lov, fraskriver virksomheden på sine egne vegne og på vegne af dets tilknyttede virksomheder og dets og deres respektive licensgivere og tjenesteudbydere udtrykkeligt alle garantier, hvad enten de er udtrykkelige, underforståede, lovbestemte eller på anden måde med hensyn til Service, herunder alle underforståede garantier for salgbarhed, egnethed til et bestemt formål, titel og ikke-krænkelse og garantier, der kan opstå som følge af handel, ydeevne, brug eller handelspraksis. Uden begrænsning af ovenstående yder virksomheden ingen garanti eller tilsagn og fremsætter ikke nogen form for repræsentation af, at tjenesten opfylder dine krav, opnår de tilsigtede resultater, er kompatibel eller arbejder med anden software, applikationer, systemer eller tjenester, fungerer uden afbrydelse skal du overholde præstations- eller pålidelighedsstandarder eller være fejlfri, eller at eventuelle fejl eller mangler kan eller vil blive rettet.',
 				p2:

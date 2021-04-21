@@ -18,6 +18,7 @@
 	margin-bottom: 5%;
 	color: #30d95d;
 	font-weight: bolder;
+	word-break: break-all;
 }
 
 .updatedP {
