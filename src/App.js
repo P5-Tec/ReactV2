@@ -5,6 +5,8 @@ import "./styles/App.css";
 import { IntlProvider } from "react-intl";
 import { flattenMessages } from "./components/helpers/FlattenMessages";
 
+import { AnimatePresence } from "framer-motion";
+
 import { useCookies } from "react-cookie";
 
 import messages from "./messages";
@@ -44,6 +46,7 @@ function App() {
 					setLanguage={setLanguage}
 					setCookies={setCookies}
 				/>
+				{/* <AnimatePresence exitBeforeEnter initial={false}> */}
 				<Switch location={location} key={location.key}>
 					<Route path="/" component={Home} exact />
 
@@ -52,6 +55,7 @@ function App() {
 					<Route path="/privacy-policy" component={Privacy} />
 					<Route path="/terms-conditions" component={Terms} />
 				</Switch>
+				{/* </AnimatePresence> */}
 				<Footer />
 			</>
 		</IntlProvider>

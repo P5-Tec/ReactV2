@@ -1,18 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FormattedMessage, injectIntl } from "react-intl";
+import { motion } from "framer-motion";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faCommentDots,
 	faEnvelope,
 	faPhone,
 } from "@fortawesome/free-solid-svg-icons";
+
 import SupportImg from "../images/support.png";
 import "../styles/Contact.css";
 
 const Contact = () => {
 	return (
-		<div className="container-fluid mainDiv">
+		<motion.div
+			className="container-fluid mainDiv"
+			initial={{ scaleY: 0 }}
+			animate={{ scaleY: 1 }}
+			exit={{ scaleY: 0 }}
+			transition={{ duration: 0.5 }}
+		>
 			<div className="row contactSection">
 				<img
 					src={SupportImg}
@@ -110,7 +119,7 @@ const Contact = () => {
 					</p>
 				</div>
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 
