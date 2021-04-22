@@ -1,10 +1,61 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FormattedMessage, injectIntl } from "react-intl";
+
+import {
+	motion,
+	useViewportScroll,
+	useSpring,
+	useTransform,
+} from "framer-motion";
+
 import "../styles/TermsAndPricavy.css";
 
 const Terms = () => {
+	//State hook check if scrolled to bottom - boolean
+	const [isComplete, setIsComplete] = useState(false);
+	//Using  useViewPortScroll to get scrolling progress
+	const { scrollYProgress } = useViewportScroll();
+	//Getting scroll progress values 0 to 1
+	const yRange = useTransform(scrollYProgress, [0, 1], [0, 1]);
+	//Setting svg path to the same value as scrolled progress
+	const pathLength = useSpring(yRange, { stiffness: 400, damping: 90 });
+
+	//Used only once at the start for setting it back to deafult value on navigation from pages
+	useEffect(() => {
+		yRange.set(0);
+	}, [yRange]);
+
+	//Using effedt hook to dynamically check scroll progress while scrolling
+	useEffect(() => yRange.onChange((v) => setIsComplete(v >= 1)), [yRange]);
+
 	return (
 		<div className="sectionMain">
+			<svg className="progress-icon" viewBox="0 0 60 60">
+				<motion.path
+					fill="none"
+					strokeWidth="5"
+					stroke="#30d95d"
+					strokeDasharray="0 1"
+					d="M 0, 20 a 20, 20 0 1,0 40,0 a 20, 20 0 1,0 -40,0"
+					style={{
+						pathLength,
+						rotate: 90,
+						translateX: 5,
+						translateY: 5,
+						scaleX: -1,
+					}}
+				/>
+				<motion.path
+					fill="none"
+					strokeWidth="5"
+					stroke="#30d95d"
+					d="M14,26 L 22,33 L 35,16"
+					initial={false}
+					strokeDasharray="0 1"
+					animate={{ pathLength: isComplete ? 1 : 0 }}
+				/>
+			</svg>
+
 			<div className="section">
 				<h1 className="mainHeading">
 					<FormattedMessage id="TermsPage.mainHeading" />

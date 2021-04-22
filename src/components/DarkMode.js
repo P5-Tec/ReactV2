@@ -10,7 +10,8 @@ const buttonVarians = {
 		scale: 1.2,
 		transition: {
 			duration: 0.3,
-			yoyo: Infinity,
+			repeat: Infinity,
+			repeatType: "mirror",
 		},
 	},
 };
