@@ -50,6 +50,11 @@
 	cursor: pointer;
 }
 
+.flagItem:hover {
+	scale: 1.1;
+	color: #30d95d;
+}
+
 .flagItem img {
 	display: inline-block;
 }

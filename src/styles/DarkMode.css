@@ -22,3 +22,18 @@
 	filter: none !important;
 	background-color: black;
 }
+
+#darkMode.clicked:hover {
+	filter: grayscale(100%) !important;
+	background-color: white;
+}
+
+#darkMode.clickedDark {
+	filter: grayscale(100%);
+	background-color: white;
+}
+
+#darkMode.clickedDark:hover {
+	filter: none !important;
+	background-color: black;
+}

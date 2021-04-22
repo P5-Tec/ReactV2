@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FormattedMessage, injectIntl } from "react-intl";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -10,8 +9,12 @@ import "../styles/Home.css";
 import MoneyImg from "../images/money.png";
 import MobileBankImg from "../images/mobileBank.png";
 import CreditCardImg from "../images/CreditCards.png";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
+// Variants (Animation) for fontAwesome icons:
+// Rotates them around in 1 second
 const svgVariants = {
 	hidden: { rotate: -360 },
 	visible: {
@@ -22,6 +25,8 @@ const svgVariants = {
 	},
 };
 
+// Variants (Animation) for buttons:
+// Makes button pulsate + text & border shadow infinitely while mouse hovers over
 const buttonVarians = {
 	hover: {
 		scale: 1.1,
@@ -34,10 +39,25 @@ const buttonVarians = {
 	},
 };
 
+// Variants (Animation) for boxes with links:
+// Change opacity from  0 to 1 - show element, in 1 second
+const boxVariants = {
+	hidden: { opacity: 0 },
+	visible: {
+		opacity: 1,
+		transition: {
+			duration: 2,
+		},
+	},
+};
+
 const Home = () => {
 	const controls = useAnimation();
-	const { ref, inView } = useInView();
+	const controls1 = useAnimation();
+	const [ref, inView] = useInView();
+	const [ref1, inView1] = useInView({ triggerOnce: true });
 
+	//Checking if element is in view and then starting or stopping animation
 	useEffect(() => {
 		if (inView) {
 			controls.start("visible");
@@ -45,7 +65,13 @@ const Home = () => {
 		if (!inView) {
 			controls.start("hidden");
 		}
-	}, [controls, inView]);
+		if (inView1) {
+			controls1.start("visible");
+		}
+		if (!inView1) {
+			controls1.start("hidden");
+		}
+	}, [controls, controls1, inView, inView1]);
 
 	return (
 		<motion.div
@@ -74,7 +100,11 @@ const Home = () => {
 					<p>
 						<FormattedMessage id="homePage.firstSection.p3" />
 					</p>
-					<motion.button variants={buttonVarians} whileHover="hover">
+					<motion.button
+						variants={buttonVarians}
+						whileHover="hover"
+						whileTap="hover"
+					>
 						<FormattedMessage id="homePage.firstSection.btn" />
 					</motion.button>
 				</span>
@@ -199,7 +229,13 @@ const Home = () => {
 			</div>
 
 			<div className="row sectionDiv">
-				<span className="col-lg-6 linkBox">
+				<motion.span
+					className="col-lg-6 linkBox"
+					ref={ref1}
+					variants={boxVariants}
+					initial="hidden"
+					animate={controls1}
+				>
 					<div>
 						<h3>
 							<FormattedMessage id="homePage.fifthSection.leftBox.heading" />
@@ -208,14 +244,24 @@ const Home = () => {
 							<FormattedMessage id="homePage.fifthSection.leftBox.p" />
 						</p>
 						<Link to="/contact">
-							<motion.button variants={buttonVarians} whileHover="hover">
+							<motion.button
+								variants={buttonVarians}
+								whileHover="hover"
+								whileTap="hover"
+							>
 								<FormattedMessage id="homePage.fifthSection.leftBox.btn" />
 							</motion.button>
 						</Link>
 					</div>
-				</span>
+				</motion.span>
 
-				<span className="col-lg-6 linkBox">
+				<motion.span
+					className="col-lg-6 linkBox"
+					ref={ref1}
+					variants={boxVariants}
+					initial="hidden"
+					animate={controls1}
+				>
 					<div>
 						<h3>
 							<FormattedMessage id="homePage.fifthSection.rightBox.heading" />
@@ -224,12 +270,16 @@ const Home = () => {
 							<FormattedMessage id="homePage.fifthSection.rightBox.p" />
 						</p>
 						<Link to="/help">
-							<motion.button variants={buttonVarians} whileHover="hover">
+							<motion.button
+								variants={buttonVarians}
+								whileHover="hover"
+								whileTap="hover"
+							>
 								<FormattedMessage id="homePage.fifthSection.rightBox.btn" />
 							</motion.button>
 						</Link>
 					</div>
-				</span>
+				</motion.span>
 			</div>
 		</motion.div>
 	);

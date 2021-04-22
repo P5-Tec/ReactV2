@@ -1,9 +1,39 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
+
 import "../styles/Language.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import flagUK from "../images/flag-uk.png";
 import flagDK from "../images/flag-dk.png";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+
+// Variants (Animation) for div with list of languages:
+// Change opacity from  0 to 1 - show element, in 1 second
+const languageVariants = {
+	hidden: {
+		opacity: 0,
+	},
+	visible: {
+		opacity: 1,
+		transition: {
+			duration: 1,
+		},
+	},
+};
+
+// Variants (Animation) for buttons:
+// Makes button pulsate infinitely while mouse hovers over
+const btnVariants = {
+	hover: {
+		scale: 1.1,
+		transition: {
+			duration: 0.3,
+			yoyo: Infinity,
+		},
+	},
+};
 
 //Dropdown items used in dropdown
 const options = [
@@ -49,7 +79,12 @@ const Language = ({ language, setLanguage, setCookies }) => {
 	return (
 		<div className="Main">
 			<div className="DropDownContainer">
-				<div className="DropDownHeader" onClick={toggling}>
+				<motion.div
+					className="DropDownHeader"
+					onClick={toggling}
+					variants={btnVariants}
+					whileHover="hover"
+				>
 					{selectedOption === "en-US" ? (
 						<div>
 							<img src={flagUK} height="40px" width="40px" alt="UK Flag" />
@@ -71,9 +106,14 @@ const Language = ({ language, setLanguage, setCookies }) => {
 							/>
 						</div>
 					)}
-				</div>
+				</motion.div>
 				{isOpen && (
-					<div className="DropDownBox">
+					<motion.div
+						className="DropDownBox"
+						variants={languageVariants}
+						initial="hidden"
+						animate={isOpen ? "visible" : "hidden"}
+					>
 						<ul className="DropDownList">
 							{options.map((option) => (
 								<li
@@ -85,7 +125,7 @@ const Language = ({ language, setLanguage, setCookies }) => {
 								</li>
 							))}
 						</ul>
-					</div>
+					</motion.div>
 				)}
 			</div>
 		</div>
