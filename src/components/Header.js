@@ -96,8 +96,8 @@ const Header = ({ language, setLanguage, setCookies }) => {
 						</g>
 						<text
 							transform="translate(60 217)"
-							font-size="55"
-							font-family="SegoeUI, Segoe UI"
+							fontSize="55"
+							fontFamily="SegoeUI, Segoe UI"
 							fill="white"
 						>
 							<tspan x="-50" y="-10">
@@ -110,56 +110,56 @@ const Header = ({ language, setLanguage, setCookies }) => {
 								transform="translate(1588.755 1318.768) rotate(-90)"
 								fill="none"
 								stroke="#ffff"
-								stroke-width="2"
+								strokeWidth="2"
 							/>
 							<path
 								d="M0,0H38.213"
 								transform="translate(1595.308 1323.322) rotate(-90)"
 								fill="none"
 								stroke="#ffff"
-								stroke-width="2"
+								strokeWidth="2"
 							/>
 							<path
 								d="M0,0H47.32"
 								transform="translate(1602.862 1327.875) rotate(-90)"
 								fill="none"
 								stroke="#ffff"
-								stroke-width="2"
+								strokeWidth="2"
 							/>
 							<path
 								d="M0,0H38.213"
 								transform="translate(1609.415 1323.322) rotate(-90)"
 								fill="none"
 								stroke="#ffff"
-								stroke-width="2"
+								strokeWidth="2"
 							/>
 							<path
 								d="M0,0H29.107"
 								transform="translate(1616.968 1318.768) rotate(-90)"
 								fill="none"
 								stroke="#ffff"
-								stroke-width="2"
+								strokeWidth="2"
 							/>
 							<path
 								d="M0,0H47.32"
 								transform="translate(1623.522 1327.875) rotate(-90)"
 								fill="none"
 								stroke="#ffff"
-								stroke-width="2"
+								strokeWidth="2"
 							/>
 							<path
 								d="M0,0H38.213"
 								transform="translate(1630.075 1323.322) rotate(-90)"
 								fill="none"
 								stroke="#ffff"
-								stroke-width="2"
+								strokeWidth="2"
 							/>
 							<path
 								d="M0,0H29.107"
 								transform="translate(1637.628 1318.768) rotate(-90)"
 								fill="none"
 								stroke="#ffff"
-								stroke-width="2"
+								strokeWidth="2"
 							/>
 						</g>
 					</motion.svg>
@@ -197,11 +197,11 @@ const Header = ({ language, setLanguage, setCookies }) => {
 						>
 							<div className="modalMain">
 								<div className="modalLinks">
-									<Link>
+									<Link to="/login">
 										<p>Login</p>
 									</Link>
 
-									<Link>
+									<Link to="/register">
 										<p>Register</p>
 									</Link>
 								</div>
@@ -250,11 +250,11 @@ const Header = ({ language, setLanguage, setCookies }) => {
 				{noMenu && (
 					<div className="headerContols">
 						<div id="headerLinks">
-							<Link>
+							<Link to="/login">
 								<p>Login</p>
 							</Link>
 
-							<Link>
+							<Link to="/register">
 								<p>Register</p>
 							</Link>
 						</div>

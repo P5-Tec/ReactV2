@@ -34,7 +34,8 @@ const buttonVarians = {
 		boxShadow: "0px 0px 8px #30d95d",
 		transition: {
 			duration: 0.3,
-			yoyo: Infinity,
+			repeat: Infinity,
+			repeatType: "mirror",
 		},
 	},
 };

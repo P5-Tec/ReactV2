@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import { FormattedMessage, injectIntl } from "react-intl";
 import { motion } from "framer-motion";
 
+import "../styles/Contact.css";
+
+import SupportImg from "../images/support.png";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faCommentDots,
@@ -10,8 +14,20 @@ import {
 	faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 
-import SupportImg from "../images/support.png";
-import "../styles/Contact.css";
+// Variants (Animation) for buttons:
+// Makes button pulsate + text & border shadow infinitely while mouse hovers over
+const buttonVarians = {
+	hover: {
+		scale: 1.1,
+		textShadow: "0px 0px 8px rgb(255, 255, 255)",
+		boxShadow: "0px 0px 8px #30d95d",
+		transition: {
+			duration: 0.3,
+			repeat: Infinity,
+			repeatType: "mirror",
+		},
+	},
+};
 
 const Contact = () => {
 	return (
@@ -39,25 +55,37 @@ const Contact = () => {
 						<FormattedMessage id="contactPage.firstSection.p2" />
 					</p>
 					<Link to="/help">
-						<button>
+						<motion.button variants={buttonVarians} whileHover="hover">
 							<FormattedMessage id="contactPage.firstSection.btn" />
-						</button>
+						</motion.button>
 					</Link>
 				</span>
 			</div>
 
 			<div className="row">
 				<div className="col-lg-4 contactBox">
-					<FontAwesomeIcon
-						icon={faCommentDots}
-						size="7x"
-						color={"green"}
-						style={{
-							borderRadius: "30px",
-							border: "green solid 5px",
-							padding: "10px",
+					{/* Icon bounces up ´n down infinitely */}
+					<motion.section
+						animate={{
+							y: -30,
+							transition: {
+								duration: 1,
+								repeat: Infinity,
+								repeatType: "mirror",
+							},
 						}}
-					/>
+					>
+						<FontAwesomeIcon
+							icon={faCommentDots}
+							size="7x"
+							color={"green"}
+							style={{
+								borderRadius: "30px",
+								border: "green solid 5px",
+								padding: "10px",
+							}}
+						/>
+					</motion.section>
 					<h2>
 						<FormattedMessage id="contactPage.secondSection.firstBox.heading" />
 					</h2>
@@ -73,16 +101,29 @@ const Contact = () => {
 				</div>
 
 				<div className="col-lg-4 contactBox">
-					<FontAwesomeIcon
-						icon={faPhone}
-						size="7x"
-						color={"green"}
-						style={{
-							borderRadius: "30px",
-							border: "green solid 5px",
-							padding: "10px",
+					{/* Icon bounces up ´n down infinitely starts with slight delay from first */}
+					<motion.section
+						animate={{
+							y: -30,
+							transition: {
+								delay: 0.33,
+								duration: 1,
+								repeat: Infinity,
+								repeatType: "mirror",
+							},
 						}}
-					/>
+					>
+						<FontAwesomeIcon
+							icon={faPhone}
+							size="7x"
+							color={"green"}
+							style={{
+								borderRadius: "30px",
+								border: "green solid 5px",
+								padding: "10px",
+							}}
+						/>
+					</motion.section>
 					<h2>
 						<FormattedMessage id="contactPage.secondSection.secondBox.heading" />
 					</h2>
@@ -98,16 +139,29 @@ const Contact = () => {
 				</div>
 
 				<div className="col-lg-4 contactBox">
-					<FontAwesomeIcon
-						icon={faEnvelope}
-						size="7x"
-						color={"green"}
-						style={{
-							borderRadius: "30px",
-							border: "green solid 5px",
-							padding: "10px",
+					{/* Icon bounces up ´n down infinitely starts with a bit more delay from first */}
+					<motion.section
+						animate={{
+							y: -30,
+							transition: {
+								delay: 0.66,
+								duration: 1,
+								repeat: Infinity,
+								repeatType: "mirror",
+							},
 						}}
-					/>
+					>
+						<FontAwesomeIcon
+							icon={faEnvelope}
+							size="7x"
+							color={"green"}
+							style={{
+								borderRadius: "30px",
+								border: "green solid 5px",
+								padding: "10px",
+							}}
+						/>
+					</motion.section>
 					<h2>
 						<FormattedMessage id="contactPage.secondSection.thirdBox.heading" />
 					</h2>

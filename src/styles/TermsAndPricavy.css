@@ -26,3 +26,11 @@
 	font-style: italic;
 	scale: 0.9;
 }
+
+.progress-icon {
+	position: fixed;
+	top: 17%;
+	left: 1%;
+	width: 10%;
+	height: 10%;
+}

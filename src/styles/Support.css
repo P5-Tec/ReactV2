@@ -50,9 +50,14 @@
 
 .qaDiv {
 	margin: 1rem 0;
+	opacity: 0;
 }
 
 .question {
 	font-weight: 700;
 	border-bottom: #30d95d solid 3px;
+}
+
+.yoyoIcon {
+	display: inline-block;
 }

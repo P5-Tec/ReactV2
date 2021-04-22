@@ -15,13 +15,44 @@ import {
 	faUserAlt,
 } from "@fortawesome/free-solid-svg-icons";
 
+// Variants (Animation) for buttons:
+// Makes button pulsate + text & border shadow infinitely while mouse hovers over
+const buttonVarians = {
+	hover: {
+		scale: 1.1,
+		textShadow: "0px 0px 8px rgb(255, 255, 255)",
+		boxShadow: "0px 0px 8px #30d95d",
+		transition: {
+			duration: 0.3,
+			repeat: Infinity,
+			repeatType: "mirror",
+		},
+	},
+};
+
+// Variants (Animation) for qa div:
+// Makes them appear on screen - opacity from 0 to 1 in duration of 1 second
+const qaBoxVariants = {
+	hidden: {
+		opacity: 0,
+	},
+	visible: {
+		opacity: 1,
+		transition: {
+			duration: 1,
+		},
+	},
+};
+
 const Support = () => {
+	//State hooks for 5 sections to toggle them
 	const [section1, setSection1] = useState(false);
 	const [section2, setSection2] = useState(false);
 	const [section3, setSection3] = useState(false);
 	const [section4, setSection4] = useState(false);
 	const [section5, setSection5] = useState(false);
 
+	//Method used to toggle section boolean by the section on which user clicked (using switch)
 	const toggleOpened = (index) => {
 		switch (index) {
 			case 1:
@@ -67,26 +98,38 @@ const Support = () => {
 					</p>
 					<p>
 						<FormattedMessage id="SupportPage.mainSection.p2" />
-						{/* <FontAwesomeIcon
-							icon={faArrowCircleDown}
-							size="1x"
-							color={"#30d95d"}
-							style={{ margin: "auto 1rem" }}
-						/> */}
+						<motion.section
+							className="yoyoIcon"
+							animate={{
+								y: 10,
+								transition: {
+									duration: 1,
+									repeat: Infinity,
+									repeatType: "mirror",
+								},
+							}}
+						>
+							<FontAwesomeIcon
+								icon={faArrowCircleDown}
+								size="1x"
+								color={"#30d95d"}
+								style={{ margin: "auto 1rem" }}
+							/>
+						</motion.section>
 					</p>
 
 					<p>
 						<FormattedMessage id="SupportPage.mainSection.p3" />
 					</p>
 					<Link to="/contact">
-						<button>
+						<motion.button variants={buttonVarians} whileHover="hover">
 							<FormattedMessage id="SupportPage.mainSection.btn" />
-						</button>
+						</motion.button>
 					</Link>
 				</span>
 			</div>
 
-			<div className="row supportSection">
+			<motion.div className="row supportSection">
 				<span className="col-lg-12" onClick={() => toggleOpened(1)}>
 					<h2>
 						<FormattedMessage id="SupportPage.section1.h1" />
@@ -95,16 +138,21 @@ const Support = () => {
 
 				{section1 &&
 					[...Array(5)].map((e, i) => (
-						<div key={i} className="col-lg-6 qaDiv">
+						<motion.div
+							key={i}
+							className="col-lg-6 qaDiv"
+							variants={qaBoxVariants}
+							animate={section1 ? "visible" : "hidden"}
+						>
 							<p className="question">
 								<FormattedMessage id={"SupportPage.section1.q" + i} />
 							</p>
 							<p className="answer">
 								<FormattedMessage id={"SupportPage.section1.a" + i} />
 							</p>
-						</div>
+						</motion.div>
 					))}
-			</div>
+			</motion.div>
 
 			<div className="row supportSection">
 				<span className="col-lg-12" onClick={() => toggleOpened(2)}>
@@ -116,14 +164,19 @@ const Support = () => {
 
 				{section2 &&
 					[...Array(2)].map((e, i) => (
-						<div key={i} className="col-lg-6 qaDiv">
+						<motion.div
+							key={i}
+							className="col-lg-6 qaDiv"
+							variants={qaBoxVariants}
+							animate={section2 ? "visible" : "hidden"}
+						>
 							<p className="question">
 								<FormattedMessage id={"SupportPage.section2.q" + i} />
 							</p>
 							<p className="answer">
 								<FormattedMessage id={"SupportPage.section2.a" + i} />
 							</p>
-						</div>
+						</motion.div>
 					))}
 			</div>
 
@@ -137,14 +190,19 @@ const Support = () => {
 
 				{section3 &&
 					[...Array(6)].map((e, i) => (
-						<div key={i} className="col-lg-6 qaDiv">
+						<motion.div
+							key={i}
+							className="col-lg-6 qaDiv"
+							variants={qaBoxVariants}
+							animate={section3 ? "visible" : "hidden"}
+						>
 							<p className="question">
 								<FormattedMessage id={"SupportPage.section3.q" + i} />
 							</p>
 							<p className="answer">
 								<FormattedMessage id={"SupportPage.section3.a" + i} />
 							</p>
-						</div>
+						</motion.div>
 					))}
 			</div>
 
@@ -158,14 +216,19 @@ const Support = () => {
 
 				{section4 &&
 					[...Array(3)].map((e, i) => (
-						<div key={i} className="col-lg-6 qaDiv">
+						<motion.div
+							key={i}
+							className="col-lg-6 qaDiv"
+							variants={qaBoxVariants}
+							animate={section4 ? "visible" : "hidden"}
+						>
 							<p className="question">
 								<FormattedMessage id={"SupportPage.section4.q" + i} />
 							</p>
 							<p className="answer">
 								<FormattedMessage id={"SupportPage.section4.a" + i} />
 							</p>
-						</div>
+						</motion.div>
 					))}
 			</div>
 
@@ -179,14 +242,19 @@ const Support = () => {
 
 				{section5 &&
 					[...Array(4)].map((e, i) => (
-						<div key={i} className="col-lg-6 qaDiv">
+						<motion.div
+							key={i}
+							className="col-lg-6 qaDiv"
+							variants={qaBoxVariants}
+							animate={section5 ? "visible" : "hidden"}
+						>
 							<p className="question">
 								<FormattedMessage id={"SupportPage.section5.q" + i} />
 							</p>
 							<p className="answer">
 								<FormattedMessage id={"SupportPage.section5.a" + i} />
 							</p>
-						</div>
+						</motion.div>
 					))}
 			</div>
 		</motion.div>
