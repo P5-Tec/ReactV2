@@ -1,9 +1,24 @@
 import React from "react";
+import { motion } from "framer-motion";
+
 import "../styles/DarkMode.css";
+
+// Variants (Animation) for buttons:
+// Makes button pulsate infinitely while mouse hovers over
+const buttonVarians = {
+	hover: {
+		scale: 1.2,
+		transition: {
+			duration: 0.3,
+			yoyo: Infinity,
+		},
+	},
+};
 
 const DarkMode = () => {
 	//Applied to the button
 	let clickedClass = "clicked";
+	let clickedDark = "clickedDark";
 	//Doc body element
 	const body = document.body;
 	//Class names to apply to the body
@@ -34,6 +49,8 @@ const DarkMode = () => {
 			body.classList.replace(darkTheme, lightTheme);
 			//Remove clicked from button
 			e.target.classList.remove(clickedClass);
+			//Add clickedDark to button
+			e.target.classList.add(clickedDark);
 			//Set local storage theme to light
 			localStorage.setItem("theme", "light");
 			//Set theme prop to light
@@ -43,6 +60,8 @@ const DarkMode = () => {
 		else {
 			//Replace body class to dark
 			body.classList.replace(lightTheme, darkTheme);
+			//Remove clickedDark from button
+			e.target.classList.remove(clickedDark);
 			//Add clicked to button
 			e.target.classList.add(clickedClass);
 			//Set local storage theme to dark
@@ -53,13 +72,15 @@ const DarkMode = () => {
 	};
 
 	return (
-		<button
+		<motion.button
+			variants={buttonVarians}
+			whileHover="hover"
 			//If theme dark then set clicked to empty
 			className={theme === "dark" ? clickedClass : ""}
 			id="darkMode"
 			//On click call switch function
 			onClick={(e) => switchTheme(e)}
-		></button>
+		></motion.button>
 	);
 };
 
