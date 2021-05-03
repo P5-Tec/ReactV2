@@ -8,7 +8,7 @@ import {
 	useTransform,
 } from "framer-motion";
 
-import "../styles/TermsAndPricavy.css";
+import "../styles/TermsAndPrivacy.css";
 
 const Privacy = () => {
 	//State hook check if scrolled to bottom - boolean
