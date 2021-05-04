@@ -52,7 +52,7 @@
 
 .flagItem:hover {
 	scale: 1.1;
-	color: #30d95d;
+	color: var(--logoGreen);
 }
 
 .flagItem img {

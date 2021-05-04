@@ -1,6 +1,8 @@
 :root {
 	--blue: rgb(23, 36, 48);
 	--white: rgb(236, 236, 236);
+	--logoGreen: #30d95d;
+	--bitBold: 700;
 }
 
 body {
