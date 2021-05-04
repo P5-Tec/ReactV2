@@ -7,7 +7,7 @@ footer p {
 	color: white;
 	margin: 0;
 	padding: 1rem 0;
-	font-weight: 600;
+	font-weight: var(--bitBold);
 }
 
 footer span {
@@ -27,6 +27,6 @@ footer span {
 }
 
 .footerLink p:hover {
-	color: #30d95d;
+	color: var(--logoGreen);
 	scale: 1.1;
 }

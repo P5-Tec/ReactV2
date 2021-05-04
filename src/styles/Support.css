@@ -10,9 +10,9 @@
 	margin: 1rem;
 	padding: 10px 35px;
 	border-radius: 50px;
-	background-color: #30d95d;
+	background-color: var(--logoGreen);
 	border-color: green;
-	font-weight: 700;
+	font-weight: var(--bitBold);
 }
 
 .supportMainSection span button:hover {
@@ -54,8 +54,8 @@
 }
 
 .question {
-	font-weight: 700;
-	border-bottom: #30d95d solid 3px;
+	font-weight: var(--bitBold);
+	border-bottom: var(--logoGreen) solid 3px;
 }
 
 .yoyoIcon {

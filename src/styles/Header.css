@@ -31,7 +31,7 @@ header h1 {
 	color: white;
 	margin: 0;
 	padding: 1rem;
-	font-weight: 600;
+	font-weight: var(--bitBold);
 }
 
 #headerLinks a {
@@ -39,7 +39,7 @@ header h1 {
 }
 
 #headerLinks p:hover {
-	color: #30d95d;
+	color: var(--logoGreen);
 	scale: 1.1;
 }
 
@@ -48,7 +48,7 @@ header h1 {
 }
 
 #menuIcon :active {
-	color: #30d95d;
+	color: var(--logoGreen);
 	scale: 1.1;
 }
 
@@ -58,7 +58,7 @@ header h1 {
 
 .modalLinks p {
 	font-size: 2rem;
-	font-weight: 700;
+	font-weight: var(--bitBold);
 	color: white;
 }
 
@@ -67,7 +67,7 @@ header h1 {
 }
 
 .modalLinks p:active {
-	color: #30d95d;
+	color: var(--logoGreen);
 }
 
 .modalToggles {
@@ -94,7 +94,7 @@ header h1 {
 }
 
 .modalLastDiv p {
-	color: #30d95d;
+	color: var(--logoGreen);
 	text-align: center;
 }
 

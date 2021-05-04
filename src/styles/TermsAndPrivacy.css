@@ -16,7 +16,7 @@
 	text-align: center;
 	font-size: 3em;
 	margin-bottom: 5%;
-	color: #30d95d;
+	color: var(--logoGreen);
 	font-weight: bolder;
 	word-break: break-all;
 }
