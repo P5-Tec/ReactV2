@@ -444,6 +444,38 @@ export default {
 					"When you as the user create an account with YouBank, you will automatically get a Basic account. If you want even more, you can upgrade to Premium and Pro in the app.",
 			},
 		},
+		RegisterPage: {
+			heading: "Create a new account",
+			headTxt:
+				"Please fill out all fields to create an account and start using YouBank.",
+			txt1: "Full name",
+			txt2: "Birthday",
+			txt3: "Phone",
+			txt4: "Address",
+			txt5: "Email",
+			txt6: "Password",
+			btn1: "Previous",
+			btn2: "Next",
+			btn3: "Create",
+			err1: "Please provide your full name",
+			err2: "Please choose a valid birthday",
+			err3: "Please provide a valid phone number",
+			err4: "Please provide your address and/or zip code",
+			err5: "Please provide a properly formatted email address",
+			passErr: {
+				e0: "Too short",
+				e1: "Weak",
+				e2: "Okay",
+				e3: "Good",
+				e4: "Strong",
+				e5: "Stronger",
+			},
+			link: {
+				pt1: "I have read and accept the",
+				pt2: "Terms and Conditions",
+				pt3: "Privacy Policies",
+			},
+		},
 		footerText: {
 			txt1: "Terms & Conditions",
 			txt2: "Privacy policy",
@@ -817,7 +849,7 @@ export default {
 				p1:
 					"Her kan du finde svarene på dine spørgsmål samt lære noget nyt om YouBank, din konto, kort og meget mere. ",
 				p2:
-					"Bare rul ned og klik på emnet, du vil lære mere om, for at få de svar, du leder efter. Det er så let! ",
+					"Bare rul ned og klik på emnet, du vil lære mere om, for at få de svar, du leder efter. Det er så nemt! ",
 				p3:
 					'Fandt du ikke det svar, du ledte efter? Vær ikke bekymret, fordi du kan klikke på "Kontakt os" for at finde ud af, hvordan du kommer i direkte kontakt med os, hvor vi er klar til at hjælpe dig med alle dine behov. ',
 				btn: "Kontakt os",
@@ -894,6 +926,38 @@ export default {
 				q3: "Hvilken konti man han få?",
 				a3:
 					"Når du som brugeren opretter konto hos YouBank bliver du automatisk oprettet en Basis konti. Vil du have mere endnu, kan du opgradere til Premium og Pro i appen.",
+			},
+		},
+		RegisterPage: {
+			heading: "Oprette en ny konto",
+			headTxt:
+				"Udfyld alle felter for at oprette en konto og begynde at bruge YouBank.",
+			txt1: "Fulde navn",
+			txt2: "Fødselsdag",
+			txt3: "Mobilnummer",
+			txt4: "Adresse",
+			txt5: "Email",
+			txt6: "Adgangskode",
+			btn1: "Forrige",
+			btn2: "Næste",
+			btn3: "Opret",
+			err1: "Angiv dit fulde navn",
+			err2: "Vælg en gyldig fødselsdag",
+			err3: "Angiv et gyldigt telefonnummer",
+			err4: "Angiv et gyldigt adresse og/eller postnummer ",
+			err5: "Angiv en korrekt e-mail adresse ",
+			passErr: {
+				e0: "For kort",
+				e1: "Svag",
+				e2: "Okay",
+				e3: "Godt",
+				e4: "Stærk",
+				e5: "Stærkere",
+			},
+			link: {
+				pt1: "Jeg har læst og accepteret",
+				pt2: "Vilkår og betingelser",
+				pt3: "Fortrolighedspolitik",
 			},
 		},
 		footerText: {
