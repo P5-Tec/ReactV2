@@ -21,6 +21,8 @@ import Support from "./components/Support";
 import Privacy from "./components/Privacy";
 import Terms from "./components/Terms";
 
+import Register from "./components/register/Register";
+
 //Get the locale language for user
 let locale = (navigator.languages && navigator.languages[0]) ||
 	navigator.language ||
@@ -51,6 +53,7 @@ function App() {
 					<Route path="/help" component={Support} />
 					<Route path="/privacy-policy" component={Privacy} />
 					<Route path="/terms-conditions" component={Terms} />
+					<Route path="/register" component={Register} />
 				</Switch>
 				<Footer />
 			</>
