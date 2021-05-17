@@ -3,6 +3,10 @@ import ReactPasswordStrength from "react-password-strength";
 import { motion } from "framer-motion";
 import { FormattedMessage, injectIntl } from "react-intl";
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import bcrypt from "bcryptjs";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // Variants (Animation) for div element:
 // Makes div fly in from right (with little spring bounce at the end)
@@ -43,23 +47,61 @@ const buttonVarians = {
 };
 
 function FinalStep(props) {
+	const history = useHistory();
 	//State hook for user password
 	const [pass, setPass] = useState({});
 	//State hook for checkbox state
 	const [checked, setChecked] = useState(false);
 
-	const createUser = () => {
-		console.log(
-			props.state.birthday,
-			props.state.name,
-			props.state.phone,
-			props.state.address,
-			props.state.zip,
-			props.state.email,
-			pass.password,
-			pass.score,
-			checked
-		);
+	const createUser = async () => {
+		const salt = await bcrypt.genSalt(7);
+		const hashed = await bcrypt.hash(pass.password, salt);
+
+		await fetch("http://api.saxproduction.dk/api/customers", {
+			method: "POST",
+			headers: {
+				Accept: "application/json",
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				fullName: props.state.name,
+				phone: props.state.phone,
+				address: props.state.address,
+				birthday: props.state.birthday,
+				email: props.state.email,
+				password: hashed,
+			}),
+		})
+			.then((response) => {
+				if (response.ok) {
+					//Show toast message
+					toast.info(<FormattedMessage id="RegisterPage.regMsgTrue" />, {
+						position: "top-center",
+						autoClose: 5000,
+						hideProgressBar: true,
+						closeOnClick: true,
+						pauseOnHover: true,
+						draggable: true,
+						progress: undefined,
+					});
+					//Redirect user after 2 sec
+					setTimeout(() => {
+						history.push("/login");
+					}, 2000);
+				} else {
+					//Show toast message
+					toast.error(<FormattedMessage id="RegisterPage.regMsgFalse" />, {
+						position: "top-center",
+						autoClose: 5000,
+						hideProgressBar: true,
+						closeOnClick: true,
+						pauseOnHover: true,
+						draggable: true,
+						progress: undefined,
+					});
+				}
+			})
+			.catch((error) => console.log(error));
 	};
 
 	return (
@@ -158,7 +200,7 @@ function FinalStep(props) {
 								.getState("email")
 								.match(/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/) ||
 							!pass.score ||
-							!pass.score == 1 ||
+							!pass.score === 1 ||
 							!checked
 						}
 						onClick={createUser}
@@ -167,6 +209,18 @@ function FinalStep(props) {
 					</motion.button>
 				</div>
 			</motion.div>
+			{/* Toaster Container to show a toast (alert / popup) */}
+			<ToastContainer
+				position="top-center"
+				autoClose={5000}
+				hideProgressBar
+				newestOnTop={false}
+				closeOnClick
+				rtl={false}
+				pauseOnFocusLoss
+				draggable
+				pauseOnHover
+			/>
 		</>
 	);
 }
