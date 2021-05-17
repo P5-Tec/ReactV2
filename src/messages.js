@@ -475,6 +475,8 @@ export default {
 				pt2: "Terms and Conditions",
 				pt3: "Privacy Policies",
 			},
+			regMsgTrue: "User created successfully!",
+			regMsgFalse: "Something went wrong!",
 		},
 		footerText: {
 			txt1: "Terms & Conditions",
@@ -959,6 +961,8 @@ export default {
 				pt2: "Vilkår og betingelser",
 				pt3: "Fortrolighedspolitik",
 			},
+			regMsgTrue: "Bruger oprettet med succes!",
+			regMsgFalse: "Noget gik galt! ",
 		},
 		footerText: {
 			txt1: "Vilkår & Betingelser",
