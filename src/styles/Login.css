@@ -1,0 +1,56 @@
+.loginDiv {
+	margin: 15% auto;
+}
+
+.loginHeader {
+	text-align: center;
+	margin: 0 auto 5rem auto;
+	width: 80%;
+}
+
+.lgnForm {
+	width: 60%;
+	margin: 5% auto;
+}
+
+.formGrp {
+	margin-bottom: 5rem;
+}
+
+.formGrp label {
+	font-size: larger;
+}
+
+#btnDivLogin {
+	margin-bottom: 3rem;
+	justify-content: center;
+	text-align: center;
+}
+
+.btn-signup {
+	margin: 1rem;
+	padding: 10px 35px;
+	border-radius: 50px;
+	background-color: var(--logoGreen);
+	border-color: green;
+	font-weight: var(--bitBold);
+}
+
+.btn-signup:hover {
+	scale: 1.1;
+	background-color: green;
+}
+
+.regLink {
+	justify-content: center;
+	text-align: center;
+	font-size: larger;
+}
+
+.regLink a {
+	text-decoration: none;
+}
+
+.regLink a:hover {
+	color: var(--logoGreen);
+}

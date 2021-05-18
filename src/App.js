@@ -20,6 +20,7 @@ import Contact from "./components/Contact";
 import Support from "./components/Support";
 import Privacy from "./components/Privacy";
 import Terms from "./components/Terms";
+import Login from "./components/Login";
 
 import Register from "./components/register/Register";
 
@@ -54,6 +55,7 @@ function App() {
 					<Route path="/privacy-policy" component={Privacy} />
 					<Route path="/terms-conditions" component={Terms} />
 					<Route path="/register" component={Register} />
+					<Route path="/login" component={Login} />
 				</Switch>
 				<Footer />
 			</>
