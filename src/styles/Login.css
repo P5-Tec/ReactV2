@@ -41,6 +41,10 @@
 	background-color: green;
 }
 
+.btn-signup:disabled:hover {
+	background-color: greenyellow;
+}
+
 .regLink {
 	justify-content: center;
 	text-align: center;

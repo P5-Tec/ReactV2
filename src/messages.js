@@ -399,6 +399,9 @@ export default {
 				p1: "Don´t have an account? ",
 				p2: " Create one now!",
 			},
+			error: {
+				err1: "Email and / or password is incorrect!",
+			},
 		},
 		footerText: {
 			txt1: "Terms & Conditions",
@@ -806,6 +809,12 @@ export default {
 			link: {
 				p1: "Har du ikke en konto? ",
 				p2: "Opret en nu!",
+			},
+			error: {
+				err1: "Indtast din e-mail og adgangskode",
+				err2: "Indtast venligst dit kodeord",
+				err3: "Indtast venligst din e-mail",
+				err4: "E-mail og / eller adgangskode er forkert!",
 			},
 		},
 		footerText: {
