@@ -409,6 +409,12 @@ export default {
 			txt3: "Contact",
 			txt4: "Support / FAQ",
 		},
+		headerTexts: {
+			link1: "Overview",
+			link2: "Accounts",
+			link3: "Profile",
+			link4: "Log out",
+		},
 	},
 	"da-DK": {
 		homePage: {
@@ -822,6 +828,12 @@ export default {
 			txt2: "Fortrolighedspolitik",
 			txt3: "Kontakt",
 			txt4: "Support / FAQ",
+		},
+		headerTexts: {
+			link1: "Oversigt",
+			link2: "Konti",
+			link3: "Profil",
+			link4: "Log ud",
 		},
 	},
 };

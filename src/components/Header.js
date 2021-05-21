@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useMediaPredicate } from "react-media-hook";
+
 import { motion } from "framer-motion";
 import Modal from "react-modal";
 import { useCookies } from "react-cookie";
+import { FormattedMessage, injectIntl } from "react-intl";
 
 import "../styles/Header.css";
 
@@ -249,25 +251,33 @@ const Header = ({ language, setLanguage, setCookies }) => {
 										</div>
 										<div className="modalUserLinks">
 											<Link to="/browse" onClick={() => setMenuOpen(false)}>
-												<p>Overview</p>
+												<p>
+													<FormattedMessage id="headerTexts.link1" />
+												</p>
 											</Link>
 
 											<Link
 												to="/browse/accounts"
 												onClick={() => setMenuOpen(false)}
 											>
-												<p>Accounts</p>
+												<p>
+													<FormattedMessage id="headerTexts.link2" />
+												</p>
 											</Link>
 
 											<Link
 												to="/browse/profile"
 												onClick={() => setMenuOpen(false)}
 											>
-												<p>Profile</p>
+												<p>
+													<FormattedMessage id="headerTexts.link3" />
+												</p>
 											</Link>
 
 											<Link to="/" onClick={handleLogOut}>
-												<p>Log out</p>
+												<p>
+													<FormattedMessage id="headerTexts.link4" />
+												</p>
 											</Link>
 										</div>
 									</div>
@@ -356,19 +366,27 @@ const Header = ({ language, setLanguage, setCookies }) => {
 									animate={isOpen ? "visible" : "hidden"}
 								>
 									<Link to="/browse">
-										<p>Overview</p>
+										<p>
+											<FormattedMessage id="headerTexts.link1" />
+										</p>
 									</Link>
 
 									<Link to="/browse/accounts">
-										<p>Accounts</p>
+										<p>
+											<FormattedMessage id="headerTexts.link2" />
+										</p>
 									</Link>
 
 									<Link to="/browse/profile">
-										<p>Profile</p>
+										<p>
+											<FormattedMessage id="headerTexts.link3" />
+										</p>
 									</Link>
 
 									<Link to="/" onClick={handleLogOut}>
-										<p>Log out</p>
+										<p>
+											<FormattedMessage id="headerTexts.link4" />
+										</p>
 									</Link>
 								</motion.div>
 							</div>
@@ -389,4 +407,4 @@ const Header = ({ language, setLanguage, setCookies }) => {
 	);
 };
 
-export default Header;
+export default injectIntl(Header);
