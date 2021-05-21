@@ -79,6 +79,7 @@ const Login = (props) => {
 					//Redirect user after 2 sec
 					setTimeout(() => {
 						props.history.push("/");
+						window.location.reload();
 					}, 1000);
 				}
 				// If response  401

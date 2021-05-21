@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useMediaPredicate } from "react-media-hook";
 import { motion } from "framer-motion";
 import Modal from "react-modal";
+import { useCookies } from "react-cookie";
 
 import "../styles/Header.css";
 
@@ -57,18 +58,62 @@ const pathVariants = {
 	},
 };
 
+// Variants (Animation) for div with list links:
+// Change opacity from  0 to 1 - show element, in 1 second
+const profileVariants = {
+	hidden: {
+		opacity: 0,
+	},
+	visible: {
+		opacity: 1,
+		transition: {
+			duration: 1,
+		},
+	},
+};
+
+// Variants (Animation) for buttons:
+// Makes button pulsate infinitely while mouse hovers over
+const btnVariants = {
+	hover: {
+		scale: 1.1,
+		transition: {
+			duration: 0.5,
+			repeat: Infinity,
+			repeatType: "mirror",
+		},
+	},
+};
+
 const Header = ({ language, setLanguage, setCookies }) => {
 	//State hook used to toggle modal - boolean
 	const [menuOpen, setMenuOpen] = useState(false);
+	const [isOpen, setIsOpen] = useState(false);
+
+	let history = useHistory();
+
+	//Toggle between isOpen state
+	const toggling = () => setIsOpen(!isOpen);
 
 	//Media queries for displaying burger menu if screen width 570 or smaller
 	const burgerMenu = useMediaPredicate("(max-width: 570px)");
 	//Media queries for hidding burger menu if screen width 571 or bigger
 	const noMenu = useMediaPredicate("(min-width: 571px)");
+	//Cookie state
+	const [cookies] = useCookies(["login"]);
 
 	//Method for toggling (updating) state boolean value
 	const toggleMenu = () => {
 		setMenuOpen(!menuOpen);
+	};
+
+	const handleLogOut = () => {
+		//Setting cookies to be expired for them to be deleted
+		document.cookie = "CustomerID=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+		document.cookie = "CustomerName=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+		//Navigation back to home and reloading page
+		history.replace("/");
+		window.location.reload();
 	};
 
 	return (
@@ -167,7 +212,7 @@ const Header = ({ language, setLanguage, setCookies }) => {
 
 				{/* If media queries for burgerMenu is active (width 570 or smaller) show this element + modal (if active) */}
 				{burgerMenu && (
-					<>
+					<div>
 						<div id="menuIcon">
 							{!menuOpen ? (
 								<FontAwesomeIcon
@@ -194,6 +239,7 @@ const Header = ({ language, setLanguage, setCookies }) => {
 							preventScroll={true}
 							style={customStyle}
 							closeTimeoutMS={500}
+							ariaHideApp={false}
 						>
 							<div className="modalMain">
 								<div className="modalLinks">
@@ -243,21 +289,59 @@ const Header = ({ language, setLanguage, setCookies }) => {
 								</div>
 							</div>
 						</Modal>
-					</>
+					</div>
 				)}
 
 				{/* If media queries for burgerMenu is inactive (width 571 or bigger) show this div */}
 				{noMenu && (
 					<div className="headerContols">
-						<div id="headerLinks">
-							<Link to="/login">
-								<p>Login</p>
-							</Link>
+						{cookies.CustomerID ? (
+							<motion.div
+								id="headerLinksProfile"
+								onClick={toggling}
+								variants={btnVariants}
+								whileHover="hover"
+							>
+								<p>{cookies.CustomerName}</p>
+							</motion.div>
+						) : (
+							<div id="headerLinks">
+								<Link to="/login">
+									<p>Login</p>
+								</Link>
 
-							<Link to="/register">
-								<p>Register</p>
-							</Link>
-						</div>
+								<Link to="/register">
+									<p>Register</p>
+								</Link>
+							</div>
+						)}
+
+						{isOpen && (
+							<div className="Backdrop" onClick={() => setIsOpen(false)}>
+								<motion.div
+									className="DropDownBoxLinks"
+									variants={profileVariants}
+									initial="hidden"
+									animate={isOpen ? "visible" : "hidden"}
+								>
+									<Link to="/browse">
+										<p>Overview</p>
+									</Link>
+
+									<Link to="/browse/accounts">
+										<p>Accounts</p>
+									</Link>
+
+									<Link to="/browse/profile">
+										<p>Profile</p>
+									</Link>
+
+									<Link to="/" onClick={handleLogOut}>
+										<p>Log out</p>
+									</Link>
+								</motion.div>
+							</div>
+						)}
 
 						<div className="headerToggles">
 							<DarkMode />

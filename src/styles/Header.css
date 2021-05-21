@@ -27,6 +27,21 @@ header h1 {
 	padding: 20px;
 }
 
+#headerLinksProfile {
+	margin-right: 10rem;
+	height: 80px;
+	padding: 20px;
+	font-weight: 500;
+	font-size: 1.3rem;
+	color: var(--logoGreen);
+	background: inherit;
+	cursor: pointer;
+}
+
+#headerLinksProfile:hover {
+	color: green;
+}
+
 #headerLinks p {
 	color: white;
 	margin: 0;
@@ -96,6 +111,39 @@ header h1 {
 .modalLastDiv p {
 	color: var(--logoGreen);
 	text-align: center;
+}
+
+.DropDownBoxLinks {
+	position: absolute;
+	right: 180px;
+	background-color: white;
+	width: 9.5em;
+	position: absolute;
+	z-index: 3;
+	margin: 80px;
+	border-radius: 20px;
+	padding: 10px;
+	text-align: center;
+}
+
+.DropDownBoxLinks a {
+	text-decoration: none;
+	color: black;
+	font-weight: 600;
+}
+
+.DropDownBoxLinks a:hover {
+	color: var(--logoGreen);
+}
+
+.Backdrop {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.4);
+	z-index: 5;
 }
 
 .ReactModal__Overlay {
