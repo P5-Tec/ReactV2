@@ -15,14 +15,19 @@ import "@formatjs/intl-relativetimeformat/locale-data/da";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+
 import Home from "./components/Home";
+
 import Contact from "./components/Contact";
 import Support from "./components/Support";
+
 import Privacy from "./components/Privacy";
 import Terms from "./components/Terms";
-import Login from "./components/Login";
 
+import Login from "./components/Login";
 import Register from "./components/register/Register";
+
+import Browse from "./components/browse/Browse";
 
 //Get the locale language for user
 let locale = (navigator.languages && navigator.languages[0]) ||
@@ -56,6 +61,7 @@ function App() {
 					<Route path="/terms-conditions" component={Terms} />
 					<Route path="/register" component={Register} />
 					<Route path="/login" component={Login} />
+					<Route path="/browse" component={Browse} />
 				</Switch>
 				<Footer />
 			</>
