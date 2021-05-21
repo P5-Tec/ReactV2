@@ -89,6 +89,7 @@ header h1 {
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
+	margin-bottom: 20%;
 }
 
 .modalToggles span {
@@ -97,7 +98,6 @@ header h1 {
 }
 
 .modalSocialLinks {
-	margin-top: 50%;
 	display: flex;
 	justify-content: space-evenly;
 }
@@ -111,6 +111,25 @@ header h1 {
 .modalLastDiv p {
 	color: var(--logoGreen);
 	text-align: center;
+}
+
+.modalUserName {
+	color: var(--logoGreen);
+	font-weight: bold;
+	margin-bottom: 2rem;
+	font-size: large;
+}
+
+.modalUserLinks {
+	text-align: center;
+	color: black;
+	margin-bottom: 30%;
+}
+
+.modalUserLinks a {
+	text-decoration: none;
+	color: white;
+	font-weight: 600;
 }
 
 .DropDownBoxLinks {

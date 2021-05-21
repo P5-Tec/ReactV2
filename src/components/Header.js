@@ -242,15 +242,46 @@ const Header = ({ language, setLanguage, setCookies }) => {
 							ariaHideApp={false}
 						>
 							<div className="modalMain">
-								<div className="modalLinks">
-									<Link to="/login">
-										<p>Login</p>
-									</Link>
+								{cookies.CustomerID ? (
+									<div>
+										<div className="modalUserName">
+											<p>{cookies.CustomerName}</p>
+										</div>
+										<div className="modalUserLinks">
+											<Link to="/browse" onClick={() => setMenuOpen(false)}>
+												<p>Overview</p>
+											</Link>
 
-									<Link to="/register">
-										<p>Register</p>
-									</Link>
-								</div>
+											<Link
+												to="/browse/accounts"
+												onClick={() => setMenuOpen(false)}
+											>
+												<p>Accounts</p>
+											</Link>
+
+											<Link
+												to="/browse/profile"
+												onClick={() => setMenuOpen(false)}
+											>
+												<p>Profile</p>
+											</Link>
+
+											<Link to="/" onClick={handleLogOut}>
+												<p>Log out</p>
+											</Link>
+										</div>
+									</div>
+								) : (
+									<div className="modalLinks">
+										<Link to="/login" onClick={() => setMenuOpen(false)}>
+											<p>Login</p>
+										</Link>
+
+										<Link to="/register" onClick={() => setMenuOpen(false)}>
+											<p>Register</p>
+										</Link>
+									</div>
+								)}
 
 								<div className="modalToggles">
 									<span>
