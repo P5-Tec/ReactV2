@@ -14,20 +14,7 @@ import {
 	faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 
-// Variants (Animation) for buttons:
-// Makes button pulsate + text & border shadow infinitely while mouse hovers over
-const buttonVarians = {
-	hover: {
-		scale: 1.1,
-		textShadow: "0px 0px 8px rgb(255, 255, 255)",
-		boxShadow: "0px 0px 8px #30d95d",
-		transition: {
-			duration: 0.3,
-			repeat: Infinity,
-			repeatType: "mirror",
-		},
-	},
-};
+import { bigBtnVariants } from "./helpers/Variants";
 
 const Contact = () => {
 	return (
@@ -55,7 +42,7 @@ const Contact = () => {
 						<FormattedMessage id="contactPage.firstSection.p2" />
 					</p>
 					<Link to="/help">
-						<motion.button variants={buttonVarians} whileHover="hover">
+						<motion.button variants={bigBtnVariants} whileHover="hover">
 							<FormattedMessage id="contactPage.firstSection.btn" />
 						</motion.button>
 					</Link>

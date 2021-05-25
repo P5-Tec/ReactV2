@@ -9,32 +9,7 @@ import flagDK from "../images/flag-dk.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
-// Variants (Animation) for div with list of languages:
-// Change opacity from  0 to 1 - show element, in 1 second
-const languageVariants = {
-	hidden: {
-		opacity: 0,
-	},
-	visible: {
-		opacity: 1,
-		transition: {
-			duration: 1,
-		},
-	},
-};
-
-// Variants (Animation) for buttons:
-// Makes button pulsate infinitely while mouse hovers over
-const btnVariants = {
-	hover: {
-		scale: 1.1,
-		transition: {
-			duration: 0.3,
-			repeat: Infinity,
-			repeatType: "mirror",
-		},
-	},
-};
+import { btnVariants, languageVariants } from "./helpers/Variants";
 
 //Dropdown items used in dropdown
 const options = [

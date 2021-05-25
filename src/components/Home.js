@@ -13,44 +13,7 @@ import CreditCardImg from "../images/CreditCards.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
-// Variants (Animation) for fontAwesome icons:
-// Rotates them around in 1 second
-const svgVariants = {
-	hidden: { rotate: -360 },
-	visible: {
-		rotate: 0,
-		transition: {
-			duration: 1,
-		},
-	},
-};
-
-// Variants (Animation) for buttons:
-// Makes button pulsate + text & border shadow infinitely while mouse hovers over
-const buttonVarians = {
-	hover: {
-		scale: 1.1,
-		textShadow: "0px 0px 8px rgb(255, 255, 255)",
-		boxShadow: "0px 0px 8px #30d95d",
-		transition: {
-			duration: 0.3,
-			repeat: Infinity,
-			repeatType: "mirror",
-		},
-	},
-};
-
-// Variants (Animation) for boxes with links:
-// Change opacity from  0 to 1 - show element, in 1 second
-const boxVariants = {
-	hidden: { opacity: 0 },
-	visible: {
-		opacity: 1,
-		transition: {
-			duration: 2,
-		},
-	},
-};
+import { svgVariants, boxVariants, bigBtnVariants } from "./helpers/Variants";
 
 const Home = () => {
 	const controls = useAnimation();
@@ -102,7 +65,7 @@ const Home = () => {
 						<FormattedMessage id="homePage.firstSection.p3" />
 					</p>
 					<motion.button
-						variants={buttonVarians}
+						variants={bigBtnVariants}
 						whileHover="hover"
 						whileTap="hover"
 					>
@@ -246,7 +209,7 @@ const Home = () => {
 						</p>
 						<Link to="/contact">
 							<motion.button
-								variants={buttonVarians}
+								variants={bigBtnVariants}
 								whileHover="hover"
 								whileTap="hover"
 							>
@@ -272,7 +235,7 @@ const Home = () => {
 						</p>
 						<Link to="/help">
 							<motion.button
-								variants={buttonVarians}
+								variants={bigBtnVariants}
 								whileHover="hover"
 								whileTap="hover"
 							>
