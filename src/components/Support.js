@@ -15,20 +15,7 @@ import {
 	faUserAlt,
 } from "@fortawesome/free-solid-svg-icons";
 
-// Variants (Animation) for buttons:
-// Makes button pulsate + text & border shadow infinitely while mouse hovers over
-const buttonVarians = {
-	hover: {
-		scale: 1.1,
-		textShadow: "0px 0px 8px rgb(255, 255, 255)",
-		boxShadow: "0px 0px 8px #30d95d",
-		transition: {
-			duration: 0.3,
-			repeat: Infinity,
-			repeatType: "mirror",
-		},
-	},
-};
+import { bigBtnVariants } from "./helpers/Variants";
 
 // Variants (Animation) for qa div:
 // Makes them appear on screen - opacity from 0 to 1 in duration of 1 second
@@ -122,7 +109,7 @@ const Support = () => {
 						<FormattedMessage id="SupportPage.mainSection.p3" />
 					</p>
 					<Link to="/contact">
-						<motion.button variants={buttonVarians} whileHover="hover">
+						<motion.button variants={bigBtnVariants} whileHover="hover">
 							<FormattedMessage id="SupportPage.mainSection.btn" />
 						</motion.button>
 					</Link>

@@ -5,28 +5,7 @@ import DatePicker from "react-date-picker";
 import * as moment from "moment";
 import { motion } from "framer-motion";
 
-// Variants (Animation) for div element:
-// Makes div fly in from right (with little spring bounce)
-const containerVariants = {
-	hidden: {
-		opacity: 0,
-		x: "100vw",
-	},
-	visible: {
-		opacity: 1,
-		x: 0,
-		transition: {
-			type: "spring",
-			delay: 0.5,
-		},
-	},
-	exit: {
-		x: "-100vw",
-		transition: {
-			ease: "easeInOut",
-		},
-	},
-};
+import { containerVariants } from "../helpers/Variants";
 
 function Step1(props) {
 	//State hook for user birthday

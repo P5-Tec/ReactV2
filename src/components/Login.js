@@ -6,37 +6,9 @@ import { motion } from "framer-motion";
 import { ToastContainer, toast } from "react-toastify";
 import { useCookies } from "react-cookie";
 
+import { bigBtnVariants, headingVariants } from "./helpers/Variants";
+
 import "../styles/Login.css";
-
-// Variants (Animation) for buttons:
-// Makes button pulsate + text & border shadow infinitely while mouse hovers over
-const buttonVarians = {
-	hover: {
-		scale: 1.1,
-		textShadow: "0px 0px 8px rgb(255, 255, 255)",
-		boxShadow: "0px 0px 8px #30d95d",
-		transition: {
-			duration: 0.3,
-			repeat: Infinity,
-			repeatType: "mirror",
-		},
-	},
-};
-
-// Variants (Animation) for header:
-// Makes header pulsate infinitely with a little delay
-const headingVariants = {
-	animate: {
-		scale: 1.1,
-		transition: {
-			duration: 1,
-			repeat: Infinity,
-			repeatType: "mirror",
-			delay: 1,
-			repeatDelay: 2,
-		},
-	},
-};
 
 const Login = (props) => {
 	//State hooks
@@ -137,7 +109,7 @@ const Login = (props) => {
 				<div id="btnDivLogin" className="form-group">
 					<motion.button
 						className="btn-signup"
-						variants={buttonVarians}
+						variants={bigBtnVariants}
 						whileHover="hover"
 						disabled={
 							!email ||

@@ -10,20 +10,7 @@ import Step1 from "./Step1";
 import Step2 from "./Step2";
 import FinalStep from "./FinalStep";
 
-// Variants (Animation) for header:
-// Makes header pulsate infinitely with a little delay
-const headingVariants = {
-	animate: {
-		scale: 1.1,
-		transition: {
-			duration: 1,
-			repeat: Infinity,
-			repeatType: "mirror",
-			delay: 1,
-			repeatDelay: 2,
-		},
-	},
-};
+import { headingVariants } from "../helpers/Variants";
 
 const Register = () => {
 	const config = {

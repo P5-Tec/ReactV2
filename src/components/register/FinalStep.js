@@ -1,50 +1,18 @@
 import React, { useState } from "react";
-import ReactPasswordStrength from "react-password-strength";
+
 import { motion } from "framer-motion";
 import { FormattedMessage, injectIntl } from "react-intl";
+
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+
 import bcrypt from "bcryptjs";
+import ReactPasswordStrength from "react-password-strength";
+
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-// Variants (Animation) for div element:
-// Makes div fly in from right (with little spring bounce at the end)
-const containerVariants = {
-	hidden: {
-		opacity: 0,
-		x: "100vw",
-	},
-	visible: {
-		opacity: 1,
-		x: 0,
-		transition: {
-			type: "spring",
-			delay: 0.5,
-		},
-	},
-	exit: {
-		x: "-100vw",
-		transition: {
-			ease: "easeInOut",
-		},
-	},
-};
-
-// Variants (Animation) for buttons:
-// Makes button pulsate + text & border shadow infinitely while mouse hovers over
-const buttonVarians = {
-	hover: {
-		scale: 1.1,
-		textShadow: "0px 0px 8px rgb(255, 255, 255)",
-		boxShadow: "0px 0px 8px #30d95d",
-		transition: {
-			duration: 0.3,
-			repeat: Infinity,
-			repeatType: "mirror",
-		},
-	},
-};
+import { containerVariants, bigBtnVariants } from "../helpers/Variants";
 
 function FinalStep(props) {
 	const history = useHistory();
@@ -191,7 +159,7 @@ function FinalStep(props) {
 				<div className="col-6">
 					<motion.button
 						className="createBtn"
-						variants={buttonVarians}
+						variants={bigBtnVariants}
 						whileHover="hover"
 						whileTap="hover"
 						disabled={

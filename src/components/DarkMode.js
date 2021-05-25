@@ -3,18 +3,7 @@ import { motion } from "framer-motion";
 
 import "../styles/DarkMode.css";
 
-// Variants (Animation) for buttons:
-// Makes button pulsate infinitely while mouse hovers over
-const buttonVarians = {
-	hover: {
-		scale: 1.2,
-		transition: {
-			duration: 0.3,
-			repeat: Infinity,
-			repeatType: "mirror",
-		},
-	},
-};
+import { btnVariants } from "./helpers/Variants";
 
 const DarkMode = () => {
 	//Applied to the button
@@ -74,7 +63,7 @@ const DarkMode = () => {
 
 	return (
 		<motion.button
-			variants={buttonVarians}
+			variants={btnVariants}
 			whileHover="hover"
 			//If theme dark then set clicked to empty
 			className={theme === "dark" ? clickedClass : ""}
