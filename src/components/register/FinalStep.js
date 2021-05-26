@@ -34,7 +34,7 @@ function FinalStep(props) {
 			body: JSON.stringify({
 				fullName: props.state.name,
 				phone: props.state.phone,
-				address: props.state.address,
+				address: props.state.address + ", " + props.state.zip,
 				birthday: props.state.birthday.split("+")[0],
 				email: props.state.email,
 				password: hashed,
