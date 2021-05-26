@@ -371,12 +371,6 @@ const Header = ({ language, setLanguage, setCookies }) => {
 										</p>
 									</Link>
 
-									<Link to="/browse/accounts">
-										<p>
-											<FormattedMessage id="headerTexts.link2" />
-										</p>
-									</Link>
-
 									<Link to="/browse/profile">
 										<p>
 											<FormattedMessage id="headerTexts.link3" />
