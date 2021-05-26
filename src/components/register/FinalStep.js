@@ -35,7 +35,7 @@ function FinalStep(props) {
 				fullName: props.state.name,
 				phone: props.state.phone,
 				address: props.state.address,
-				birthday: props.state.birthday,
+				birthday: props.state.birthday.split("+")[0],
 				email: props.state.email,
 				password: hashed,
 			}),
