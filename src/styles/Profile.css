@@ -1,0 +1,130 @@
+.profileMainDiv {
+	margin: 15% auto;
+	width: 80%;
+}
+
+.headerTxt {
+	text-align: center;
+	margin-bottom: 5%;
+	font-weight: 700;
+}
+
+.secRow {
+	margin-bottom: 1.5rem;
+	padding-top: 16px;
+}
+
+.secLabel {
+	text-align: center;
+	font-size: larger;
+}
+
+.secData {
+	text-align: center;
+	font-size: larger;
+	font-weight: bold;
+	border-radius: 20px;
+	padding: 5px;
+}
+
+.secDataPass {
+	font-size: larger;
+	font-weight: bold;
+	border-radius: 20px;
+	padding: 5px;
+}
+
+.secRowBtn {
+	margin-top: 1.5rem;
+	padding-top: 16px;
+	justify-content: right;
+}
+
+.secRowBtnEdit {
+	margin-top: 5rem;
+	margin-bottom: 3rem;
+	justify-content: center;
+}
+
+.divider {
+	margin: 5rem 0;
+	background-color: green;
+	border: 1px solid grey;
+}
+
+.btnEdit {
+	margin-right: 10rem;
+	border: none;
+	background-color: var(--logoGreen);
+	font-size: larger;
+	font-weight: 700;
+	padding: 0.8rem 2rem;
+	border-radius: 30px;
+}
+
+.btnEdit:hover {
+	background-color: green;
+}
+
+.btnCancel {
+	border-radius: 20px;
+	border: none;
+	padding: 0.5rem 1rem;
+	margin-right: 7%;
+	font-size: medium;
+	font-weight: 700;
+	background-color: grey;
+}
+
+.btnCancel:hover {
+	background-color: rgb(65, 65, 65);
+	border: 1px solid grey;
+}
+
+.btnSave {
+	border-radius: 20px;
+	border: none;
+	padding: 0.5rem 1rem;
+	margin-left: 7%;
+	font-size: larger;
+	font-weight: 700;
+	background-color: var(--logoGreen);
+}
+
+.btnSave:hover {
+	background-color: green;
+	border: 1px solid var(--logoGreen);
+}
+
+.btnSave:disabled:hover {
+	background-color: yellowgreen;
+	border: 1px solid var(--logoGreen);
+	cursor: not-allowed;
+}
+
+.btnChange {
+	border-radius: 20px;
+	border: none;
+	padding: 0.5rem 1rem;
+	font-size: larger;
+	font-weight: 700;
+	background-color: var(--logoGreen);
+}
+
+.btnChange:hover {
+	background-color: green;
+	border: 1px solid var(--logoGreen);
+}
+
+.btnChange:disabled:hover {
+	background-color: yellowgreen;
+	border: 1px solid var(--logoGreen);
+	cursor: not-allowed;
+}
+
+.secPassInput {
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	border: none;
+}
