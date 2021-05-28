@@ -1,0 +1,47 @@
+.overviewMain {
+	width: 60%;
+	margin: 10% auto;
+}
+
+.accDiv {
+	border: 1px solid var(--text-color);
+	border-radius: 30px;
+	padding: 2rem;
+	margin-bottom: 5rem;
+}
+
+.cardDiv {
+	/* background-image: url("../images/YouBank-Card.png");
+	background-repeat: no-repeat;
+	background-size: contain; */
+}
+
+.loader {
+	width: 20px;
+	height: 20px;
+	margin: 40px auto;
+	border-radius: 50%;
+	background: var(--logoGreen);
+}
+
+.loader-div {
+	margin: 22.5% auto;
+}
+
+.loader-text {
+	text-align: center;
+	font-size: 2rem;
+	margin: 3rem;
+	font-weight: bold;
+}
+
+@media only screen and (max-width: 570px) {
+	.loader-div {
+		margin: 60% auto;
+	}
+
+	.overviewMain {
+		width: 80%;
+		margin: 10% auto;
+	}
+}
