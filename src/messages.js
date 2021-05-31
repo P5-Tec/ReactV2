@@ -455,7 +455,7 @@ export default {
 			section3: {
 				header: "Transactions",
 				btn1: "Show transactions",
-				btn2: "Clsoe transactions",
+				btn2: "Close transactions",
 			},
 		},
 		footerText: {

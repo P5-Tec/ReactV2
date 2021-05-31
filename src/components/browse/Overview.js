@@ -3,9 +3,13 @@ import { FormattedMessage, injectIntl } from "react-intl";
 
 import { motion } from "framer-motion";
 
-import { useCookies } from "react-cookie";
+import { btnVariants } from "../helpers/Variants";
 
 import "../../styles/Overview.css";
+
+import masterCard from "../../images/mastercardIcon.png";
+import visa from "../../images/visaIcon.png";
+import virtual from "../../images/virtualCard.png";
 
 const loaderVariants = {
 	animationOne: {
@@ -26,30 +30,11 @@ const loaderVariants = {
 };
 
 const Overview = ({ userAccount }) => {
-	//Cookie state
-	const [cookies] = useCookies(["login"]);
 	const [isLoading, setIsLoading] = useState(false);
 	const [showTransaction, setShowTransaction] = useState(false);
 	const [userTransactions, setUserTransactions] = useState([{}]);
 
-	// const getData = async () => {
-	// await fetch("http://api.saxproduction.dk/api/Accounts/" + userAccountID, {
-	// 	method: "GET",
-	// 	headers: {
-	// 		Accept: "application/json",
-	// 		"Content-Type": "application/json",
-	// 	},
-	// })
-	// 	.then((response) => {
-	// 		response.json().then(function (data) {
-	// 			console.log(data);
-	// 		});
-	// 	})
-	// 	.catch((error) => console.log(error));
-
-	// 	setIsLoading(false);
-	// };
-
+	//Method used for getting user account info (transactions)
 	const getTransactions = async (accID) => {
 		await fetch("http://api.saxproduction.dk/api/Accounts/" + accID, {
 			method: "GET",
@@ -145,33 +130,64 @@ const Overview = ({ userAccount }) => {
 														</p>
 													</span>
 													<span className="col-sm-3">
-														<p>
-															<b>
-																<FormattedMessage id="OverviewPage.section2.txt3" />
-															</b>
-															{": "}
-															{card.cardStatus === 0 ? (
+														{card.cardStatus === 0 ? (
+															<span className="row cardInfo">
+																<b>
+																	<FormattedMessage id="OverviewPage.section2.txt3" />
+																</b>
+																{": "}
 																<FormattedMessage id="OverviewPage.section2.status1" />
-															) : card.cardStatus === 1 ? (
+																<p id="activeStatus"></p>
+															</span>
+														) : card.cardStatus === 1 ? (
+															<span className="row cardInfo">
+																<b>
+																	<FormattedMessage id="OverviewPage.section2.txt3" />
+																</b>
+																{": "}
 																<FormattedMessage id="OverviewPage.section2.status2" />
-															) : (
+																<p id="frozenStatus"></p>
+															</span>
+														) : (
+															<span className="row cardInfo">
+																<b>
+																	<FormattedMessage id="OverviewPage.section2.txt3" />
+																</b>
+																{": "}
 																<FormattedMessage id="OverviewPage.section2.status3" />
-															)}
-														</p>
+																<p id="inactiveStatus"></p>
+															</span>
+														)}
 
-														<p>
-															<b>
-																<FormattedMessage id="OverviewPage.section2.txt4" />
-															</b>
-															{": "}
-															{card.cardType === 0 ? (
+														{card.cardType === 0 ? (
+															<span className="row cardInfo">
+																<b>
+																	<FormattedMessage id="OverviewPage.section2.txt4" />
+																</b>
+																{": "}
 																<FormattedMessage id="OverviewPage.section2.type1" />
-															) : card.cardType === 1 ? (
+
+																<img className="typeImg" src={masterCard} />
+															</span>
+														) : card.cardType === 1 ? (
+															<span className="row cardInfo">
+																<b>
+																	<FormattedMessage id="OverviewPage.section2.txt4" />
+																</b>
+																{": "}
 																<FormattedMessage id="OverviewPage.section2.type2" />
-															) : (
+																<img className="typeImg" src={visa} />
+															</span>
+														) : (
+															<span className="row cardInfo">
+																<b>
+																	<FormattedMessage id="OverviewPage.section2.txt4" />
+																</b>
+																{": "}
 																<FormattedMessage id="OverviewPage.section2.type3" />
-															)}
-														</p>
+																<img className="typeImg" src={virtual} />
+															</span>
+														)}
 													</span>
 												</span>
 											</div>
@@ -180,22 +196,44 @@ const Overview = ({ userAccount }) => {
 								: null}
 
 							{showTransaction ? (
-								<button onClick={() => setShowTransaction(false)}>
+								<motion.button
+									className="transaccBtn"
+									variants={btnVariants}
+									whileHover="hover"
+									onClick={() => setShowTransaction(false)}
+								>
 									<FormattedMessage id="OverviewPage.section3.btn2" />
-								</button>
+								</motion.button>
 							) : (
-								<button onClick={() => getTransactions(acc.accountId)}>
+								<motion.button
+									className="transaccBtn"
+									variants={btnVariants}
+									whileHover="hover"
+									onClick={() => getTransactions(acc.accountId)}
+								>
 									<FormattedMessage id="OverviewPage.section3.btn1" />
-								</button>
+								</motion.button>
 							)}
 
 							{showTransaction
 								? userTransactions.map((t) => (
-										<div key={t.transactionId}>
+										<div className="transaccDiv" key={t.transactionId}>
 											<h3>
 												<FormattedMessage id="OverviewPage.section3.header" />
 											</h3>
-											<div className="container-fluid">
+											<div className="container-fluid singleTransacc">
+												<p>Transaction Id: {t.transactionId}</p>
+												<p>Transaction status: {t.status}</p>
+												<p>Transaction ammount: {t.transactionAmount}</p>
+											</div>
+
+											<div className="container-fluid singleTransacc">
+												<p>Transaction Id: {t.transactionId}</p>
+												<p>Transaction status: {t.status}</p>
+												<p>Transaction ammount: {t.transactionAmount}</p>
+											</div>
+
+											<div className="container-fluid singleTransacc">
 												<p>Transaction Id: {t.transactionId}</p>
 												<p>Transaction status: {t.status}</p>
 												<p>Transaction ammount: {t.transactionAmount}</p>
