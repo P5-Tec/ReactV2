@@ -1,6 +1,6 @@
 .overviewMain {
 	width: 60%;
-	margin: 10% auto;
+	margin: 17% auto;
 }
 
 .accDiv {
@@ -8,12 +8,78 @@
 	border-radius: 30px;
 	padding: 2rem;
 	margin-bottom: 5rem;
+	margin-top: 2rem;
+}
+
+.accDiv h3 {
+	margin-bottom: 1.5rem;
 }
 
 .cardDiv {
-	/* background-image: url("../images/YouBank-Card.png");
-	background-repeat: no-repeat;
-	background-size: contain; */
+	margin-top: 5rem;
+}
+
+.cardDiv h3 {
+	margin-bottom: 1.5rem;
+}
+
+.cardInfo {
+	padding-left: 15px;
+}
+
+.typeImg {
+	width: 40px;
+	vertical-align: middle;
+	margin-left: 10px;
+}
+
+#activeStatus {
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
+	background-color: green;
+	margin-left: 10px;
+}
+
+#frozenStatus {
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
+	border: 1px solid black;
+	background-color: yellow;
+	margin-left: 10px;
+}
+
+#inactiveStatus {
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
+	background-color: grey;
+	margin-left: 10px;
+}
+
+.transaccBtn {
+	margin: 2rem auto;
+	border: none;
+	border-radius: 30px;
+	padding: 10px;
+	font-weight: 600;
+	background-color: var(--logoGreen);
+}
+
+.transaccBtn:hover {
+	background-color: green;
+}
+
+.transaccDiv {
+	overflow-y: auto;
+	height: 250px;
+}
+
+.singleTransacc {
+	margin-top: 1.3rem;
+	margin-bottom: 2rem;
+	border-bottom: 1px solid grey;
 }
 
 .loader {
