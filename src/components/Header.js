@@ -257,15 +257,6 @@ const Header = ({ language, setLanguage, setCookies }) => {
 											</Link>
 
 											<Link
-												to="/browse/accounts"
-												onClick={() => setMenuOpen(false)}
-											>
-												<p>
-													<FormattedMessage id="headerTexts.link2" />
-												</p>
-											</Link>
-
-											<Link
 												to="/browse/profile"
 												onClick={() => setMenuOpen(false)}
 											>
