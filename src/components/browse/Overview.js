@@ -215,32 +215,23 @@ const Overview = ({ userAccount }) => {
 								</motion.button>
 							)}
 
-							{showTransaction
-								? userTransactions.map((t) => (
+							{showTransaction ? (
+								<div>
+									<h3>
+										<FormattedMessage id="OverviewPage.section3.header" />
+									</h3>
+
+									{userTransactions.map((t) => (
 										<div className="transaccDiv" key={t.transactionId}>
-											<h3>
-												<FormattedMessage id="OverviewPage.section3.header" />
-											</h3>
-											<div className="container-fluid singleTransacc">
-												<p>Transaction Id: {t.transactionId}</p>
-												<p>Transaction status: {t.status}</p>
-												<p>Transaction ammount: {t.transactionAmount}</p>
-											</div>
-
-											<div className="container-fluid singleTransacc">
-												<p>Transaction Id: {t.transactionId}</p>
-												<p>Transaction status: {t.status}</p>
-												<p>Transaction ammount: {t.transactionAmount}</p>
-											</div>
-
 											<div className="container-fluid singleTransacc">
 												<p>Transaction Id: {t.transactionId}</p>
 												<p>Transaction status: {t.status}</p>
 												<p>Transaction ammount: {t.transactionAmount}</p>
 											</div>
 										</div>
-								  ))
-								: null}
+									))}
+								</div>
+							) : null}
 						</div>
 					))}
 				</div>
